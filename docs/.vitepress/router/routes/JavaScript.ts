@@ -1,7 +1,7 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-04-09 10:56:17
+ * @LastEditTime: 2024-04-09 17:09:06
  */
 export default [
     {
@@ -14,6 +14,10 @@ export default [
             {
                 text: '从原型到原型链',
                 link: '/page/frontend/JavaScript/201_Prototype'
+            },
+            {
+                text: '作用域',
+                link: '/page/frontend/JavaScript/202_Scope'
             }
         ]
     },
