@@ -1,7 +1,7 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-04-09 17:09:06
+ * @LastEditTime: 2024-04-09 18:17:48
  */
 export default [
     {
@@ -18,6 +18,10 @@ export default [
             {
                 text: '作用域',
                 link: '/page/frontend/JavaScript/202_Scope'
+            },
+            {
+                text: '执行上下文',
+                link: '/page/frontend/JavaScript/203_ExecutionContext'
             }
         ]
     },
