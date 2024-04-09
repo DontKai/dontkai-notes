@@ -7,7 +7,7 @@ export default defineConfig({
     // head 会被渲染成 <link .... >
     base: '/dontkai-notes/',
     head: [
-        ['link', { rel: 'icon', href: '/dontkai-notes/home/hero.png' }], // 页头icon
+        ['link', { rel: 'icon', href: '/dontkai-notes/hero.png' }], // 页头icon
         ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }] // 字体
     ],
     lang: 'zh-CN',
@@ -20,7 +20,7 @@ export default defineConfig({
         }
     },
     themeConfig: {
-        logo: '/home/hero.png',
+        logo: '/hero.png',
         search: {
             provider: 'local'
         },

@@ -30,5 +30,5 @@ console.log(person2.name) // DontKai
 你可以这样理解：每一个 JavaScript 对象(null 除外)在创建的时候就会与之关联另一个对象，这个对象就是我们所说的原型，每一个对象都会从原型"继承"属性。
 
 <div align=center>
-    <img src=/prototype/001_proto.png width=100% />
+    <img src=./assets/001_proto.png width=100% />
 </div>
