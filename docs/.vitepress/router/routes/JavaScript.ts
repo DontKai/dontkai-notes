@@ -1,7 +1,7 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-04-10 14:43:21
+ * @LastEditTime: 2024-04-10 15:57:53
  */
 export default [
     {
@@ -37,6 +37,26 @@ export default [
         text: '系列二',
         items: [
             {
+                text: '闭包',
+                link: '/page/frontend/JavaScript/305_Closure'
+            },
+            {
+                text: 'apply|call|bind',
+                link: '/page/frontend/JavaScript/306_ThisTransfer'
+            },
+            {
+                text: '创建对象的多种方式',
+                link: '/page/frontend/JavaScript/307_CreateObject'
+            },
+            {
+                text: '继承的多种方式',
+                link: '/page/frontend/JavaScript/308_ObjectExtend'
+            },
+            {
+                text: '防抖节流',
+                link: '/page/frontend/JavaScript/309_DebounceThrottle'
+            },
+            {
                 text: '栈-深拷贝和浅拷贝',
                 link: '/page/frontend/JavaScript/301_Stack'
             },
@@ -51,19 +71,15 @@ export default [
             {
                 text: '树-深/广度优先遍历',
                 link: '/page/frontend/JavaScript/304_Tree'
-            },
-            {
-                text: '闭包',
-                link: '/page/frontend/JavaScript/305_Closure'
-            },
-            {
-                text: 'apply|call|bind',
-                link: '/page/frontend/JavaScript/306_ThisTransfer'
             }
         ]
     },
     {
         text: '系列三',
+        items: []
+    },
+    {
+        text: '系列四',
         items: []
     }
 ]
