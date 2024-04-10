@@ -1,7 +1,7 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-04-10 14:05:01
+ * @LastEditTime: 2024-04-10 14:08:57
  */
 export default [
     {
@@ -51,6 +51,10 @@ export default [
             {
                 text: '树-深/广度优先遍历',
                 link: '/page/frontend/JavaScript/304_Tree'
+            },
+            {
+                text: '闭包',
+                link: '/page/frontend/JavaScript/305_Closure'
             }
         ]
     },
