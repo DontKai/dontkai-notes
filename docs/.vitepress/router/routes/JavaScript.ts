@@ -1,7 +1,7 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-04-10 14:08:57
+ * @LastEditTime: 2024-04-10 14:43:21
  */
 export default [
     {
@@ -55,6 +55,10 @@ export default [
             {
                 text: '闭包',
                 link: '/page/frontend/JavaScript/305_Closure'
+            },
+            {
+                text: 'apply|call|bind',
+                link: '/page/frontend/JavaScript/306_ThisTransfer'
             }
         ]
     },
