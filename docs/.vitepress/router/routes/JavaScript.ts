@@ -1,7 +1,7 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-04-11 14:02:32
+ * @LastEditTime: 2024-04-11 14:06:50
  */
 export default [
     {
@@ -55,6 +55,10 @@ export default [
             {
                 text: '防抖节流',
                 link: '/page/frontend/JavaScript/2_DebounceThrottle'
+            },
+            {
+                text: '类型判断',
+                link: '/page/frontend/JavaScript/2_TypeJudge'
             },
             {
                 text: 'Object.assign',
