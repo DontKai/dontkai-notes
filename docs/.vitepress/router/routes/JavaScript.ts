@@ -1,7 +1,7 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-04-10 15:57:53
+ * @LastEditTime: 2024-04-11 14:02:32
  */
 export default [
     {
@@ -9,27 +9,27 @@ export default [
         items: [
             {
                 text: '原型链',
-                link: '/page/frontend/JavaScript/201_Prototype'
+                link: '/page/frontend/JavaScript/1_Prototype'
             },
             {
                 text: '作用域',
-                link: '/page/frontend/JavaScript/202_Scope'
+                link: '/page/frontend/JavaScript/1_Scope'
             },
             {
                 text: '执行上下文栈',
-                link: '/page/frontend/JavaScript/203_ExecutionContextStack'
+                link: '/page/frontend/JavaScript/1_ExecutionContextStack'
             },
             {
                 text: '执行上下文',
-                link: '/page/frontend/JavaScript/204_ExecutionContext'
+                link: '/page/frontend/JavaScript/1_ExecutionContext'
             },
             {
                 text: '作用域链',
-                link: '/page/frontend/JavaScript/205_ScopeChain'
+                link: '/page/frontend/JavaScript/1_ScopeChain'
             },
             {
                 text: 'this',
-                link: '/page/frontend/JavaScript/206_This'
+                link: '/page/frontend/JavaScript/1_This'
             }
         ]
     },
@@ -38,39 +38,43 @@ export default [
         items: [
             {
                 text: '闭包',
-                link: '/page/frontend/JavaScript/305_Closure'
+                link: '/page/frontend/JavaScript/2_Closure'
             },
             {
                 text: 'apply|call|bind',
-                link: '/page/frontend/JavaScript/306_ThisTransfer'
+                link: '/page/frontend/JavaScript/2_ThisTransfer'
             },
             {
                 text: '创建对象的多种方式',
-                link: '/page/frontend/JavaScript/307_CreateObject'
+                link: '/page/frontend/JavaScript/2_CreateObject'
             },
             {
                 text: '继承的多种方式',
-                link: '/page/frontend/JavaScript/308_ObjectExtend'
+                link: '/page/frontend/JavaScript/2_ObjectExtend'
             },
             {
                 text: '防抖节流',
-                link: '/page/frontend/JavaScript/309_DebounceThrottle'
+                link: '/page/frontend/JavaScript/2_DebounceThrottle'
             },
             {
-                text: '栈-深拷贝和浅拷贝',
-                link: '/page/frontend/JavaScript/301_Stack'
+                text: 'Object.assign',
+                link: '/page/frontend/JavaScript/2_Assign'
+            },
+            {
+                text: '深拷贝和浅拷贝',
+                link: '/page/frontend/JavaScript/2_Copy'
             },
             {
                 text: '队列-事件循环',
-                link: '/page/frontend/JavaScript/302_Queue'
+                link: '/page/frontend/JavaScript/2_Queue'
             },
             {
                 text: '字典和集合-Set和Map',
-                link: '/page/frontend/JavaScript/303_Dictionary'
+                link: '/page/frontend/JavaScript/2_Dictionary'
             },
             {
                 text: '树-深/广度优先遍历',
-                link: '/page/frontend/JavaScript/304_Tree'
+                link: '/page/frontend/JavaScript/2_Tree'
             }
         ]
     },
