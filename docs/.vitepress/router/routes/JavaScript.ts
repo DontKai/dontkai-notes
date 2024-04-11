@@ -1,7 +1,7 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-04-11 14:06:50
+ * @LastEditTime: 2024-04-11 16:34:53
  */
 export default [
     {
@@ -73,8 +73,8 @@ export default [
                 link: '/page/frontend/JavaScript/2_Queue'
             },
             {
-                text: '字典和集合-Set和Map',
-                link: '/page/frontend/JavaScript/2_Dictionary'
+                text: '集合-Set和Map',
+                link: '/page/frontend/JavaScript/2_SetAndMap'
             },
             {
                 text: '树-深/广度优先遍历',
