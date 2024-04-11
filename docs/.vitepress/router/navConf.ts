@@ -6,7 +6,7 @@ export default [
             // { text: 'Browser', link: '/page/frontend/Browser/001_Test' },
             // { text: 'HTML', link: '/page/frontend/HTML/001_Test' },
             // { text: 'CSS', link: '/page/frontend/CSS/001_Test' },
-            { text: 'JavaScript', link: '/page/frontend/JavaScript/201_Prototype' },
+            { text: 'JavaScript', link: '/page/frontend/JavaScript/1_Prototype' },
             // { text: 'TypeScript', link: '/page/frontend/TypeScript/001_Test' },
             { text: 'Vue', link: '/page/frontend/Vue/001_Test' }
         ]
