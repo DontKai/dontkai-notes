@@ -1,7 +1,7 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-04-12 10:33:06
+ * @LastEditTime: 2024-04-12 11:43:58
  */
 export default [
     {
@@ -96,6 +96,10 @@ export default [
             {
                 text: '数组扁平化',
                 link: '/page/frontend/JavaScript/3_ArrayFlatten'
+            },
+            {
+                text: '数组最大值和最小值',
+                link: '/page/frontend/JavaScript/3_ArrayMaxMin'
             }
         ]
     },
