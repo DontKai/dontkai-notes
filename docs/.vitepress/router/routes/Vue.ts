@@ -1,25 +1,24 @@
 /*
  * @file: Vue 路由
  * @author: DontK
- * @LastEditTime: 2024-04-12 14:21:11
+ * @LastEditTime: 2024-04-12 14:25:06
  */
 export default [
     {
-        text: 'Vue2',
+        text: '系列一',
         items: [
             {
-                text: '原型链',
-                link: '/page/frontend/JavaScript/201_Prototype'
+                text: '1_Test',
+                link: '/page/frontend/Vue/1_Test'
+            },
+            {
+                text: '2_Test',
+                link: '/page/frontend/Vue/2_Test'
             }
         ]
     },
     {
-        text: 'Vue3',
-        items: [
-            {
-                text: '闭包',
-                link: '/page/frontend/JavaScript/305_Closure'
-            }
-        ]
+        text: '系列二',
+        items: []
     }
 ]
