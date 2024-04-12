@@ -1,11 +1,12 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-04-12 13:53:43
+ * @LastEditTime: 2024-04-12 14:17:33
  */
 export default [
     {
         text: '系列一',
+        collapsed: false,
         items: [
             {
                 text: '原型链',
@@ -35,6 +36,7 @@ export default [
     },
     {
         text: '系列二',
+        collapsed: false,
         items: [
             {
                 text: '闭包',
@@ -84,6 +86,7 @@ export default [
     },
     {
         text: '系列三',
+        collapsed: false,
         items: [
             {
                 text: '数组常用方法',
@@ -109,6 +112,7 @@ export default [
     },
     {
         text: '系列四',
+        collapsed: false,
         items: []
     }
 ]
