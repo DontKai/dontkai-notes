@@ -1,7 +1,7 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-04-12 14:17:33
+ * @LastEditTime: 2024-04-12 17:22:38
  */
 export default [
     {
@@ -81,6 +81,10 @@ export default [
             {
                 text: '树-深/广度优先遍历',
                 link: '/page/frontend/JavaScript/2_Tree'
+            },
+            {
+                text: '函数柯里化',
+                link: '/page/frontend/JavaScript/2_Currying'
             }
         ]
     },
@@ -103,6 +107,10 @@ export default [
             {
                 text: '数组最大值和最小值',
                 link: '/page/frontend/JavaScript/3_ArrayMaxMin'
+            },
+            {
+                text: '获取随机数',
+                link: '/page/frontend/JavaScript/3_Random'
             },
             {
                 text: '两个参数值是否相等',
