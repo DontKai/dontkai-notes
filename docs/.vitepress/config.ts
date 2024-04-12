@@ -1,7 +1,6 @@
 import { defineConfig } from 'vitepress'
 import sidebarConf from './router/sidebarConf'
 import navConf from './router/navConf'
-import socialLinksConf from './router/socialLinksConf'
 
 export default defineConfig({
     // head 会被渲染成 <link .... >
@@ -25,7 +24,7 @@ export default defineConfig({
             provider: 'local'
         },
         nav: navConf,
-        socialLinks: socialLinksConf as any,
+        socialLinks: [{ icon: 'github', link: 'https://github.com/DontKai/dontkai-notes' }],
         sidebar: sidebarConf,
         outline: {
             level: [2, 6],

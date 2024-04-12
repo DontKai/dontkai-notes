@@ -1,7 +1,7 @@
 /*
- * @file: JavaScript 路由
+ * @file: Vue 路由
  * @author: DontK
- * @LastEditTime: 2024-04-10 15:57:53
+ * @LastEditTime: 2024-04-12 14:21:11
  */
 export default [
     {
