@@ -87,7 +87,11 @@ console.log(arr.sort()) //[1,2,4,5,6]
 console.log(arr) //[1,2,4,5,6]
 ```
 
-> tips:可以使用 sort()方法创建一个随机数组
+::: tip
+
+tips:可以使用 sort()方法创建一个随机数组
+
+:::
 
 ```javascript
 function compare() {

@@ -2,7 +2,9 @@
 
 Object.assign()拷贝的是（可枚举）属性值。用于将所有可枚举属性的值从一个或多个源对象分配到目标对象。它将返回目标对象
 
-> 在 JavaScript 中枚举属性简单来说就是指对象中的属性是否可以被遍历出来，是属性的 enumerable 值决定的
+::: tip
+在 JavaScript 中枚举属性简单来说就是指对象中的属性是否可以被遍历出来，是属性的 enumerable 值决定的
+:::
 
 ## 基本用法
 
@@ -20,9 +22,13 @@ console.log(currentTarget) // {a: 1, b: 3, c: 5, d: 6}
 console.log(target) // {a: 1, b: 3, c: 5, d: 6}
 ```
 
-> 1. 如果目标对象中的属性具有相同的键，则属性将被源对象中的属性覆盖。后面的源对象的属性将类似地覆盖前面的源对象的属性
-> 2. Object.assign 方法只会拷贝源对象自身的并且可枚举的属性到目标对象
-> 3. 注意目标自身也会改变
+::: tip
+
+1. 如果目标对象中的属性具有相同的键，则属性将被源对象中的属性覆盖。后面的源对象的属性将类似地覆盖前面的源对象的属性
+2. Object.assign 方法只会拷贝源对象自身的并且可枚举的属性到目标对象
+3. 注意目标自身也会改变
+
+:::
 
 ### 当只有一个 target 对象时，直接返回该对象
 
@@ -40,8 +46,12 @@ console.log(currentTarget)
 // Number {10} / String {'10'} / Boolean {false}
 ```
 
-> 1. 如果 target 为字符串时，source 为字符串 会报错，source 为数值和布尔值不会报错，不影响 target 自身
-> 2. 如果 target 不为字符串时，source 为其他类型 不影响 target 自身
+::: tip
+
+1. 如果 target 为字符串时，source 为字符串 会报错，source 为数值和布尔值不会报错，不影响 target 自身
+2. 如果 target 不为字符串时，source 为其他类型 不影响 target 自身
+
+:::
 
 ### 当 target 为对象，source 为（数值/字符串/布尔值）
 

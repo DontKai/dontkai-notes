@@ -23,6 +23,8 @@
     --vp-c-brand-lighter: var(--vp-c-purple-lighter);
     --vp-c-brand-dark: var(--vp-c-purple-dark);
     --vp-c-brand-darker: var(--vp-c-purple-darker);
+
+    --vp-layout-max-width: 1540px;
 }
 
 ::-webkit-scrollbar {
@@ -33,4 +35,8 @@
 }
 ::-webkit-scrollbar-thumb {
     background: rgba(177, 133, 219, 0.5);
+}
+
+.VPDoc.has-aside .content-container {
+    max-width: 876px !important;
 }

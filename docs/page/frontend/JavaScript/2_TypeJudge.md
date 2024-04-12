@@ -8,7 +8,11 @@
 
 ## typeof
 
-> typeof 是一元操作符，放在其单个操作数的前面，操作数可以是任意类型。返回值为表示操作数类型的一个字符串。
+::: tip
+
+typeof 是一元操作符，放在其单个操作数的前面，操作数可以是任意类型。返回值为表示操作数类型的一个字符串。
+
+:::
 
 typeof 可以正常检测出：number、boolean、string、object、function、undefined、symbol、bigint
 
@@ -37,7 +41,11 @@ console.log(typeof Symbol('sym')) // symbol
 console.log(typeof BigInt(1)) // bigint
 ```
 
-> 缺点：typeof 在判断一个 object 的数据返回的都是 object, 而不能细致的具体到是哪一种。所以要 想区分对象、数组、null，单纯使用 typeof 是不行的。
+::: tip
+
+缺点：typeof 在判断一个 object 的数据返回的都是 object, 而不能细致的具体到是哪一种。所以要 想区分对象、数组、null，单纯使用 typeof 是不行的。
+
+:::
 
 ## instanceof
 

@@ -1,7 +1,7 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-04-12 11:43:58
+ * @LastEditTime: 2024-04-12 13:53:43
  */
 export default [
     {
@@ -100,6 +100,10 @@ export default [
             {
                 text: '数组最大值和最小值',
                 link: '/page/frontend/JavaScript/3_ArrayMaxMin'
+            },
+            {
+                text: '两个参数值是否相等',
+                link: '/page/frontend/JavaScript/3_TwoEqual'
             }
         ]
     },
