@@ -34,6 +34,11 @@ export default defineConfig({
             prev: '上一页',
             next: '下一页'
         },
+        notFound: {
+            title: '这里什么也没有，去首页看看吧',
+            quote: '',
+            linkText: '返回首页'
+        },
         lastUpdated: {
             text: '最后更新于'
         },
