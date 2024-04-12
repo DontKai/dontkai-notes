@@ -1,7 +1,7 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-04-11 16:34:53
+ * @LastEditTime: 2024-04-12 10:33:06
  */
 export default [
     {
@@ -73,7 +73,7 @@ export default [
                 link: '/page/frontend/JavaScript/2_Queue'
             },
             {
-                text: '集合-Set和Map',
+                text: '集合-Set 和 字典-Map',
                 link: '/page/frontend/JavaScript/2_SetAndMap'
             },
             {
@@ -84,7 +84,20 @@ export default [
     },
     {
         text: '系列三',
-        items: []
+        items: [
+            {
+                text: '数组常用方法',
+                link: '/page/frontend/JavaScript/3_ArrayFunction'
+            },
+            {
+                text: '数组去重',
+                link: '/page/frontend/JavaScript/3_ArrayDeduplication'
+            },
+            {
+                text: '数组扁平化',
+                link: '/page/frontend/JavaScript/3_ArrayFlatten'
+            }
+        ]
     },
     {
         text: '系列四',
