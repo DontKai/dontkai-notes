@@ -1,11 +1,29 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-04-12 17:22:38
+ * @LastEditTime: 2024-04-15 11:15:41
  */
 export default [
     {
-        text: '系列一',
+        text: 'ES6系列',
+        collapsed: false,
+        items: [
+            {
+                text: '函数的扩展',
+                link: '/page/frontend/JavaScript/0_FunctionExtension'
+            },
+            {
+                text: '对象的拓展',
+                link: '/page/frontend/JavaScript/0_ObjectExtension'
+            },
+            {
+                text: '运算符的拓展',
+                link: '/page/frontend/JavaScript/0_OperrationExtension'
+            }
+        ]
+    },
+    {
+        text: '深入系列',
         collapsed: false,
         items: [
             {
@@ -35,7 +53,7 @@ export default [
         ]
     },
     {
-        text: '系列二',
+        text: '专题系列',
         collapsed: false,
         items: [
             {
@@ -64,7 +82,7 @@ export default [
             },
             {
                 text: 'Object.assign',
-                link: '/page/frontend/JavaScript/2_Assign'
+                link: '/page/frontend/JavaScript/2_ObjectAssign'
             },
             {
                 text: '深拷贝和浅拷贝',
@@ -85,11 +103,15 @@ export default [
             {
                 text: '函数柯里化',
                 link: '/page/frontend/JavaScript/2_Currying'
+            },
+            {
+                text: 'Object.defineProperty',
+                link: '/page/frontend/JavaScript/2_ObjectDefineProperty'
             }
         ]
     },
     {
-        text: '系列三',
+        text: 'Utils系列',
         collapsed: false,
         items: [
             {
@@ -117,10 +139,5 @@ export default [
                 link: '/page/frontend/JavaScript/3_TwoEqual'
             }
         ]
-    },
-    {
-        text: '系列四',
-        collapsed: false,
-        items: []
     }
 ]
