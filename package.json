@@ -11,6 +11,7 @@
         "docs:deploy": "sh deploy.sh"
     },
     "devDependencies": {
+        "less": "^4.2.0",
         "vitepress": "^1.0.2"
     },
     "repository": {

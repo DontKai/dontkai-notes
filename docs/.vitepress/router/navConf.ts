@@ -4,7 +4,7 @@ export default [
         text: '前端',
         items: [
             { text: 'JavaScript', link: '/page/frontend/JavaScript/1_Deep/1_Prototype' },
-            { text: 'Vue', link: '/page/frontend/Vue/1_Test' }
+            { text: 'Vue', link: '/page/frontend/Vue/1_Vue2/1_Test' }
         ]
     },
     {
