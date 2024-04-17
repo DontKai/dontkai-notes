@@ -30,5 +30,5 @@ console.log(Object.prototype.__proto__ === null) // true
 如图所示：
 
 <div align=center>
-    <img src=./assets/1_proto.png width=100% />
+    <img src=../assets/1_proto.png width=100% />
 </div>

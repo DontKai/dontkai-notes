@@ -19,7 +19,7 @@ console.log('Inside Global Execution Context')
 ```
 
 <div align=center>
-    <img src=./assets/1_execution.png width=100% />
+    <img src=../assets/1_execution.png width=100% />
 </div>
 
 1. 全局执行上下文：当 JavaScript 程序开始执行时，首先会创建全局执行上下文，并将其推入执行上下文栈的顶部。
