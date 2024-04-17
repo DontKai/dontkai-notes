@@ -1,7 +1,7 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-04-15 11:15:41
+ * @LastEditTime: 2024-04-17 10:09:55
  */
 export default [
     {
@@ -107,6 +107,10 @@ export default [
             {
                 text: 'Object.defineProperty',
                 link: '/page/frontend/JavaScript/2_ObjectDefineProperty'
+            },
+            {
+                text: 'Proxy',
+                link: '/page/frontend/JavaScript/2_Proxy'
             }
         ]
     },
