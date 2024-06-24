@@ -25,6 +25,7 @@
     --vp-c-brand-darker: var(--vp-c-purple-darker);
 
     --vp-layout-max-width: 1540px;
+    --vp-border-radius: 8px;
 }
 
 ::-webkit-scrollbar {
