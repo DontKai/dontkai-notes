@@ -1,16 +1,15 @@
 /*
  * @file: Hooks路由
  * @author: DontK
- * @LastEditTime: 2024-06-24 16:10:40
+ * @LastEditTime: 2024-06-24 17:04:35
  */
 export default [
     {
-        text: 'Network',
-        items: [
-            {
-                text: 'useRequest',
-                link: '/page/frontend/Hooks/useRequest'
-            }
-        ]
+        text: 'is',
+        link: '/page/frontend/Hooks/is'
+    },
+    {
+        text: 'useRequest',
+        link: '/page/frontend/Hooks/useRequest'
     }
 ]
