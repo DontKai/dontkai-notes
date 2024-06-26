@@ -1,5 +1,8 @@
 <template>
-    <button class="k-test-button" @click="emit('call')">测试一下</button>
+    <button class="k-test-button" @click="emit('call')">
+        测试一下
+        <el-icon><Pointer /></el-icon>
+    </button>
 </template>
 <script setup lang="ts">
 const emit = defineEmits(['call'])
@@ -18,6 +21,10 @@ const emit = defineEmits(['call'])
     font-size: 1rem;
     box-sizing: border-box;
     vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     &:hover {
         background-color: var(--vp-c-brand-dark);
     }

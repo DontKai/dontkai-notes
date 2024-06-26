@@ -14,17 +14,17 @@ hero:
         - theme: alt
           text: 搭建vitepress
           link: /page/VitepressBuild/
-features:
-    - icon:
-          src: /read.svg
-      title: 前端
-      details: html, css, javascript, typescript, vue...
-      link: /page/JavaScript/1_Deep/1_Prototype
-    - icon:
-          src: /technology.svg
-      title: 后端
-      details: node, java, mysql, mongodb, nginx....
-      link: /page/JavaScript/1_Deep/1_Prototype
+# features:
+#     - icon:
+#           src: /read.svg
+#       title: 前端
+#       details: html, css, javascript, typescript, vue...
+#       link: /page/JavaScript/1_Deep/1_Prototype
+#     - icon:
+#           src: /technology.svg
+#       title: 后端
+#       details: node, java, mysql, mongodb, nginx....
+#       link: /page/JavaScript/1_Deep/1_Prototype
 ---
 
 <script setup>

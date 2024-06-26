@@ -7,8 +7,6 @@
 </template>
 <script setup lang="ts">
 import { Ref, ref } from 'vue'
-import KTestButton from '../../../../components/KTestButton/index.vue'
-import KDemoCard from '../../../../components/KDemoCard/index.vue'
 
 const data = ref({})
 const useRequest = (req: Function): [Ref<boolean>, Function] => {

@@ -17,5 +17,9 @@
     "repository": {
         "type": "git",
         "url": "git+https://github.com/DontKai/dontkai-notes.git"
+    },
+    "dependencies": {
+        "@element-plus/icons-vue": "^2.3.1",
+        "element-plus": "^2.7.6"
     }
 }
