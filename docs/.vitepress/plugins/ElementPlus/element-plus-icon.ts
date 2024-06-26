@@ -1,8 +1,7 @@
-import type { App } from 'vue';
-import * as ElementPlusIconsVue from '@element-plus/icons-vue';
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
-export const setupElementPlusIcon = (app: App<Element>) => {
+export const setupElementPlusIcon = (app: any) => {
     Object.keys(ElementPlusIconsVue).forEach((key: any) => {
-        app.component(key, (ElementPlusIconsVue as any)[key]);
-    });
-};
+        app.component(key, (ElementPlusIconsVue as any)[key])
+    })
+}
