@@ -1,146 +1,134 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-04-17 10:33:06
+ * @LastEditTime: 2024-06-26 14:51:46
  */
 export default [
     {
-        text: 'ES6系列',
-        collapsed: false,
-        items: [
-            {
-                text: '函数的扩展',
-                link: '/page/frontend/JavaScript/0_ES6/0_FunctionExtension'
-            },
-            {
-                text: '对象的拓展',
-                link: '/page/frontend/JavaScript/0_ES6/0_ObjectExtension'
-            },
-            {
-                text: '运算符的拓展',
-                link: '/page/frontend/JavaScript/0_ES6/0_OperrationExtension'
-            }
-        ]
-    },
-    {
-        text: '深入系列',
-        collapsed: false,
+        text: '知识点',
+        collapsed: true,
         items: [
             {
                 text: '原型链',
-                link: '/page/frontend/JavaScript/1_Deep/1_Prototype'
+                link: '/page/JavaScript/prototype/'
             },
             {
                 text: '作用域',
-                link: '/page/frontend/JavaScript/1_Deep/1_Scope'
+                link: '/page/JavaScript/scope/'
             },
             {
                 text: '执行上下文栈',
-                link: '/page/frontend/JavaScript/1_Deep/1_ExecutionContextStack'
+                link: '/page/JavaScript/executionContextStack/'
             },
             {
                 text: '执行上下文',
-                link: '/page/frontend/JavaScript/1_Deep/1_ExecutionContext'
+                link: '/page/JavaScript/executionContext/'
             },
             {
                 text: '作用域链',
-                link: '/page/frontend/JavaScript/1_Deep/1_ScopeChain'
+                link: '/page/JavaScript/scopeChain/'
             },
             {
                 text: 'this',
-                link: '/page/frontend/JavaScript/1_Deep/1_This'
-            }
-        ]
-    },
-    {
-        text: '专题系列',
-        collapsed: false,
-        items: [
+                link: '/page/JavaScript/this/'
+            },
             {
                 text: '闭包',
-                link: '/page/frontend/JavaScript/2_Special/2_Closure'
+                link: '/page/JavaScript/closure/'
             },
             {
                 text: 'apply|call|bind',
-                link: '/page/frontend/JavaScript/2_Special/2_ThisTransfer'
+                link: '/page/JavaScript/thisTransfer/'
             },
             {
                 text: '创建对象的多种方式',
-                link: '/page/frontend/JavaScript/2_Special/2_CreateObject'
+                link: '/page/JavaScript/createObject/'
             },
             {
                 text: '继承的多种方式',
-                link: '/page/frontend/JavaScript/2_Special/2_ObjectExtend'
+                link: '/page/JavaScript/objectExtend/'
             },
             {
                 text: '防抖节流',
-                link: '/page/frontend/JavaScript/2_Special/2_DebounceThrottle'
+                link: '/page/JavaScript/debounceThrottle/'
             },
             {
                 text: '类型判断',
-                link: '/page/frontend/JavaScript/2_Special/2_TypeJudge'
+                link: '/page/JavaScript/typeJudge/'
             },
             {
                 text: 'Object.assign',
-                link: '/page/frontend/JavaScript/2_Special/2_ObjectAssign'
+                link: '/page/JavaScript/objectAssign/'
             },
             {
                 text: '深拷贝和浅拷贝',
-                link: '/page/frontend/JavaScript/2_Special/2_Copy'
+                link: '/page/JavaScript/copy/'
             },
             {
                 text: '队列-事件循环',
-                link: '/page/frontend/JavaScript/2_Special/2_Queue'
+                link: '/page/JavaScript/queue/'
             },
             {
                 text: '集合-Set 和 字典-Map',
-                link: '/page/frontend/JavaScript/2_Special/2_SetAndMap'
+                link: '/page/JavaScript/setAndMap/'
             },
             {
                 text: '树-深/广度优先遍历',
-                link: '/page/frontend/JavaScript/2_Special/2_Tree'
+                link: '/page/JavaScript/tree/'
             },
             {
                 text: '函数柯里化',
-                link: '/page/frontend/JavaScript/2_Special/2_Currying'
+                link: '/page/JavaScript/currying/'
             },
             {
                 text: 'Object.defineProperty',
-                link: '/page/frontend/JavaScript/2_Special/2_ObjectDefineProperty'
+                link: '/page/JavaScript/objectDefineProperty/'
             },
             {
                 text: 'Proxy',
-                link: '/page/frontend/JavaScript/2_Special/2_Proxy'
+                link: '/page/JavaScript/proxy/'
+            },
+            {
+                text: '函数的扩展',
+                link: '/page/JavaScript/functionExtension/'
+            },
+            {
+                text: '对象的拓展',
+                link: '/page/JavaScript/objectExtension/'
+            },
+            {
+                text: '运算符的拓展',
+                link: '/page/JavaScript/operrationExtension/'
             }
         ]
     },
     {
-        text: 'Utils系列',
-        collapsed: false,
+        text: '拓展',
+        collapsed: true,
         items: [
             {
                 text: '数组常用方法',
-                link: '/page/frontend/JavaScript/3_Utils/3_ArrayFunction'
+                link: '/page/JavaScript/utils-arrayFunction/'
             },
             {
                 text: '数组去重',
-                link: '/page/frontend/JavaScript/3_Utils/3_ArrayDeduplication'
+                link: '/page/JavaScript/utils-arrayDeduplication/'
             },
             {
                 text: '数组扁平化',
-                link: '/page/frontend/JavaScript/3_Utils/3_ArrayFlatten'
+                link: '/page/JavaScript/utils-arrayFlatten/'
             },
             {
                 text: '数组最大值和最小值',
-                link: '/page/frontend/JavaScript/3_Utils/3_ArrayMaxMin'
+                link: '/page/JavaScript/utils-arrayMaxMin/'
             },
             {
                 text: '获取随机数',
-                link: '/page/frontend/JavaScript/3_Utils/3_Random'
+                link: '/page/JavaScript/utils-random/'
             },
             {
                 text: '两个参数值是否相等',
-                link: '/page/frontend/JavaScript/3_Utils/3_TwoEqual'
+                link: '/page/JavaScript/utils-twoEqual/'
             }
         ]
     }

@@ -10,12 +10,19 @@ export default defineConfig({
         ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }] // 字体
     ],
     lang: 'zh-CN',
-    title: 'DontKai',
-    description: 'DontKai 的documents',
+    title: 'DK',
+    description: 'DK 的documents',
     lastUpdated: true,
     markdown: {
         image: {
             lazyLoading: true
+        },
+        container: {
+            tipLabel: '提示',
+            warningLabel: '警告',
+            dangerLabel: '危险',
+            infoLabel: '信息',
+            detailsLabel: '详细信息'
         }
     },
     themeConfig: {

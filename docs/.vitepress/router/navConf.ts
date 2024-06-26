@@ -1,20 +1,9 @@
 export default [
     { text: '主页', link: '/' },
-    {
-        text: '前端',
-        items: [
-            { text: 'JavaScript', link: '/page/frontend/JavaScript/1_Deep/1_Prototype' },
-            { text: 'Vue', link: '/page/frontend/Vue/1_Vue2/1_Test' },
-            { text: 'Hooks', link: '/page/frontend/Hooks/useRequest' }
-        ]
-    },
-    {
-        text: '关于我',
-        items: [
-            // { text: '掘金', link: 'https://juejin.cn/user/2916335264469944/posts' },
-            // { text: 'CSDN', link: 'https://blog.csdn.net/DunKan?type=blog' },
-            // { text: 'gitee', link: 'https://gitee.com/Dont-Kai' },
-            { text: 'github', link: 'https://github.com/DontKai' }
-        ]
-    }
+    // { text: 'HTML', link: '/page/HTML/test/' },
+    // { text: 'CSS', link: '/page/CSS/test/' },
+    { text: 'JavaScript', link: '/page/JavaScript/prototype/' },
+    { text: 'Vue', link: '/page/Vue/props/' },
+    // { text: '组件', link: '/page/Compontents/test/' },
+    { text: '函数', link: '/page/Hooks/is/' }
 ]
