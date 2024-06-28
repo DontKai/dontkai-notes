@@ -8,12 +8,14 @@ import CSS from './routes/CSS'
 import JavaScript from './routes/JavaScript'
 import Vue from './routes/Vue'
 import Hooks from './routes/Hooks'
+import Python from './routes/Python'
 
 const sidebarConf: DefaultTheme.Sidebar = {
     '/page/CSS/': CSS,
     '/page/JavaScript/': JavaScript,
     '/page/Vue/': Vue,
-    '/page/Hooks/': Hooks
+    '/page/Hooks/': Hooks,
+    '/page/Python/': Python
 }
 
 export default sidebarConf
