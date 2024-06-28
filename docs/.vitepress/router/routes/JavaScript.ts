@@ -1,13 +1,17 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-06-26 14:51:46
+ * @LastEditTime: 2024-06-28 14:12:54
  */
 export default [
     {
-        text: '知识点',
-        collapsed: true,
+        text: '知识点1',
+        collapsed: false,
         items: [
+            {
+                text: '运算符',
+                link: '/page/JavaScript/operrationExtension/'
+            },
             {
                 text: '原型链',
                 link: '/page/JavaScript/prototype/'
@@ -37,6 +41,10 @@ export default [
                 link: '/page/JavaScript/closure/'
             },
             {
+                text: '函数的扩展',
+                link: '/page/JavaScript/functionExtension/'
+            },
+            {
                 text: 'apply|call|bind',
                 link: '/page/JavaScript/thisTransfer/'
             },
@@ -45,16 +53,12 @@ export default [
                 link: '/page/JavaScript/createObject/'
             },
             {
+                text: '对象的拓展',
+                link: '/page/JavaScript/objectExtension/'
+            },
+            {
                 text: '继承的多种方式',
                 link: '/page/JavaScript/objectExtend/'
-            },
-            {
-                text: '防抖节流',
-                link: '/page/JavaScript/debounceThrottle/'
-            },
-            {
-                text: '类型判断',
-                link: '/page/JavaScript/typeJudge/'
             },
             {
                 text: 'Object.assign',
@@ -63,10 +67,20 @@ export default [
             {
                 text: '深拷贝和浅拷贝',
                 link: '/page/JavaScript/copy/'
+            }
+        ]
+    },
+    {
+        text: '知识点2',
+        collapsed: false,
+        items: [
+            {
+                text: '防抖节流',
+                link: '/page/JavaScript/debounceThrottle/'
             },
             {
-                text: '队列-事件循环',
-                link: '/page/JavaScript/queue/'
+                text: '类型判断',
+                link: '/page/JavaScript/typeJudge/'
             },
             {
                 text: '集合-Set 和 字典-Map',
@@ -87,24 +101,26 @@ export default [
             {
                 text: 'Proxy',
                 link: '/page/JavaScript/proxy/'
+            }
+        ]
+    },
+    {
+        text: '知识点3',
+        collapsed: false,
+        items: [
+            {
+                text: '事件流',
+                link: '/page/JavaScript/event/'
             },
             {
-                text: '函数的扩展',
-                link: '/page/JavaScript/functionExtension/'
-            },
-            {
-                text: '对象的拓展',
-                link: '/page/JavaScript/objectExtension/'
-            },
-            {
-                text: '运算符的拓展',
-                link: '/page/JavaScript/operrationExtension/'
+                text: '事件循环(Event Loop)',
+                link: '/page/JavaScript/eventLoop/'
             }
         ]
     },
     {
         text: '拓展',
-        collapsed: true,
+        collapsed: false,
         items: [
             {
                 text: '数组常用方法',
