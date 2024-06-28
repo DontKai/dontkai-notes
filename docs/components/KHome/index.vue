@@ -2,8 +2,8 @@
     <div class="k-home">
         <h2 class="k-title">前端官网推荐</h2>
         <div class="k-container" @mousemove="conMouseMove" @mouseleave="conMouseLeave">
-            <div class="card" ref="cardRef" v-for="item in siteData" :key="item.name">
-                <a class="card-link" :href="item.link" target="_blank">
+            <div class="card" ref="cardRef" v-for="item in siteData" :key="item.name" @click="cardClick(item.link)">
+                <div class="card-link">
                     <div class="title">{{ item.name }} →</div>
                     <div class="desc">{{ item.desc }}</div>
                     <div class="logo">
@@ -23,7 +23,7 @@
                         </svg>
                         <img v-else class="img" :src="item.logoUrl" />
                     </div>
-                </a>
+                </div>
             </div>
         </div>
     </div>
@@ -104,6 +104,10 @@ const conMouseLeave = () => {
             card.style.setProperty('--y', `-1000px`)
         })
     }
+}
+
+const cardClick = (link: any) => {
+    window.open(link, '_blank')
 }
 </script>
 <style lang="less" scoped>
