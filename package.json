@@ -10,6 +10,10 @@
         "docs:preview": "vitepress preview docs",
         "docs:deploy": "sh deploy.sh"
     },
+    "dependencies": {
+        "@element-plus/icons-vue": "^2.3.1",
+        "element-plus": "^2.7.6"
+    },
     "devDependencies": {
         "less": "^4.2.0",
         "vitepress": "^1.0.2"
@@ -17,9 +21,5 @@
     "repository": {
         "type": "git",
         "url": "git+https://github.com/DontKai/dontkai-notes.git"
-    },
-    "dependencies": {
-        "@element-plus/icons-vue": "^2.3.1",
-        "element-plus": "^2.7.6"
     }
 }

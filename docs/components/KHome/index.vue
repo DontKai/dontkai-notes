@@ -125,7 +125,6 @@ const conMouseLeave = () => {
         margin-top: 20px;
         .card {
             height: calc(200px + 2px + 2px);
-            background: red;
             background: var(--vp-code-block-bg);
             border-radius: 12px;
             color: #a1a1a1;

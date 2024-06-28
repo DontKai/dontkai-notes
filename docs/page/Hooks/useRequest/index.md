@@ -50,6 +50,6 @@ const [testLoading, testRequest] = useRequest(testReq)
 
 const testClick = async () => {
     const res = await testRequest()
-    data.value = res
+    ...
 }
 ```
