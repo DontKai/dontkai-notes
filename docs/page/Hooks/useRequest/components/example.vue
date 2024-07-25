@@ -6,28 +6,8 @@
     </KDemoCard>
 </template>
 <script setup lang="ts">
-import { Ref, ref } from 'vue'
-
-const data = ref({})
-const useRequest = (req: Function): [Ref<boolean>, Function] => {
-    const loading = ref<boolean>(false)
-    const request = (params: any) => {
-        loading.value = true
-        return new Promise((resolve, reject) => {
-            req(params)
-                .then((res: any) => {
-                    resolve(res)
-                })
-                .catch((err: any) => {
-                    reject(err)
-                })
-                .finally(() => {
-                    loading.value = false
-                })
-        })
-    }
-    return [loading, request]
-}
+import { ref } from 'vue'
+import useRequest from '../../../../hooks/useRequest'
 
 const testReq = () => {
     return new Promise((resolve, reject) => {
@@ -39,8 +19,8 @@ const testReq = () => {
         }, 1000)
     })
 }
-
 const [testLoading, testRequest] = useRequest(testReq)
+const data = ref({})
 
 const testClick = async () => {
     if (data.value) {

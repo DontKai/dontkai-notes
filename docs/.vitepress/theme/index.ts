@@ -2,20 +2,23 @@
 import DefaultTheme from 'vitepress/theme'
 import 'element-plus/dist/index.css'
 import './custom.css'
-import { setupElementPlus, setupElementPlusIcon } from '../plugins/ElementPlus'
+import { setupElement } from '../plugins/ElementPlus'
+import { setupDirective } from '../../directive'
+import { setupStore } from '../../store'
+import { setupComponents } from '../../components'
 import CustomLayout from './Layout.vue'
-import KDemoCard from '../../components/KDemoCard/index.vue'
-import KTestButton from '../../components/KTestButton/index.vue'
 
 export default {
     extends: DefaultTheme,
     Layout: CustomLayout,
     enhanceApp: ({ app }) => {
+        // 注册pinia
+        setupStore(app)
         // 注册element-plus
-        setupElementPlus(app)
-        setupElementPlusIcon(app)
+        setupElement(app)
+        // 注册自定义指令
+        setupDirective(app)
         // 全局注册基础组件
-        app.component('KDemoCard', KDemoCard)
-        app.component('KTestButton', KTestButton)
+        setupComponents(app)
     }
 }

@@ -1,3 +1,8 @@
+/*
+ * @file 判断工具
+ * @author: DontK
+ * @LastEditTime: 2024-07-25 14:19:48
+ */
 const { toString } = Object.prototype
 
 /**
@@ -128,4 +133,21 @@ export const isElement = (val: unknown): val is Element => {
  */
 export const isMap = (val: unknown): val is Map<any, any> => {
     return is(val, 'Map')
+}
+
+/**
+ * @description: 判断是否是移动端
+ */
+export const isMobile = (): boolean => {
+    const flag = window.navigator.userAgent.match(
+        /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+    )
+    return Boolean(flag)
+}
+
+/**
+ * @description: 判断是否是微信浏览器
+ */
+export const isWXBrowser = (): boolean => {
+    return /micromessenger/i.test(window.navigator.userAgent)
 }

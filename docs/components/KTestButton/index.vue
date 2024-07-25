@@ -1,11 +1,19 @@
 <template>
-    <button class="k-test-button" @click="emit('call')">
-        测试一下
+    <el-button class="k-test-button" @click="emit('call')">
+        {{ props.text }}
         <el-icon><Pointer /></el-icon>
-    </button>
+    </el-button>
 </template>
 <script setup lang="ts">
 const emit = defineEmits(['call'])
+const props = withDefaults(
+    defineProps<{
+        text?: string
+    }>(),
+    {
+        text: '测试一下'
+    }
+)
 </script>
 <style lang="less" scoped>
 .k-test-button {

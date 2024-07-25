@@ -1,13 +1,9 @@
 /*
  * @file: Hooks 路由
  * @author: DontK
- * @LastEditTime: 2024-06-26 14:10:31
+ * @LastEditTime: 2024-07-25 13:24:09
  */
 export default [
-    {
-        text: 'is',
-        link: '/page/Hooks/is/'
-    },
     {
         text: 'useRequest',
         link: '/page/Hooks/useRequest/'

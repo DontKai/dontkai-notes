@@ -1,6 +1,11 @@
-// 引入element-plus组件
-import { setupElementPlus } from './element-plus';
-// 引入element-plus-icon组件
-import { setupElementPlusIcon } from './element-plus-icon';
+import type { App } from 'vue'
+import { setupElementPlus } from './element-plus'
+import { setupElementPlusIcon } from './element-plus-icon'
 
-export { setupElementPlus, setupElementPlusIcon };
+/**
+ * @description: Element-Plus 和 图标
+ */
+export const setupElement = (app: App<Element>) => {
+    setupElementPlus(app)
+    setupElementPlusIcon(app)
+}

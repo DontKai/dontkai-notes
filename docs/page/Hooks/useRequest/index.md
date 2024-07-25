@@ -4,14 +4,7 @@
 
 # useRequest
 
-## useRequest.ts
-
 简单的封装请求函数，内置 loading 状态
-
-::: details 点我查看代码
-<<< @/hooks/useRequest.ts
-
-:::
 
 ## 使用示例
 
@@ -28,3 +21,9 @@ const testClick = async () => {
     ...
 }
 ```
+
+## useRequest.ts
+
+::: details 点我查看代码
+<<< @/hooks/useRequest.ts
+:::
