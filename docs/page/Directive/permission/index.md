@@ -9,7 +9,7 @@
 <!-- 示例代码 -->
 <Example />
 
-## v-permission
+## 代码
 
 ::: details 点我查看代码
 <<< @/directive/permission/index.ts
