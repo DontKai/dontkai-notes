@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-// import storageOwn from '@/utils/storageOwn';
+import storageOwn from '../../utils/storageOwn'
 
 interface PermissionState {
     [key: string]: any
@@ -21,8 +21,7 @@ const usePermissionStore = defineStore('permission', {
         strategies: [
             {
                 key: 'dk_permission', // 自定义存储名称
-                storage: localStorage // 自定义存储位置
-                // storage: storageOwn, // 自定义存储位置
+                storage: storageOwn // 自定义存储位置
                 // paths: []
             }
         ]

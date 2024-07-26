@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-// import storageOwn from '@/utils/storageOwn';
+import storageOwn from '../../utils/storageOwn'
 
 interface UserState {
     [key: string]: any
@@ -26,7 +26,7 @@ const useUserStore = defineStore('userStore', {
         strategies: [
             {
                 key: 'dk_user', // 自定义存储名称
-                // storage: storageOwn, // 自定义存储位置
+                storage: storageOwn, // 自定义存储位置
                 paths: ['userBaseInfo', 'token'] // 指定要持久化的字段
             }
         ]

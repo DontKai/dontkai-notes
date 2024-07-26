@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-// import storageOwn from '@/utils/storageOwn';
+import storageOwn from '../../utils/storageOwn'
 
 interface DictState {
     [key: string]: any
@@ -21,7 +21,7 @@ const useDictStore = defineStore('dict', {
         strategies: [
             {
                 key: 'dk_dict', // 自定义存储名称
-                // storage: storageOwn, // 自定义存储位置
+                storage: storageOwn, // 自定义存储位置
                 paths: []
             }
         ]

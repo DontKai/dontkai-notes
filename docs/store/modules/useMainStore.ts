@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-// import storageOwn from '@/utils/storageOwn';
+import storageOwn from '../../utils/storageOwn'
 
 interface MainState {
     [key: string]: any
@@ -21,7 +21,7 @@ const useMainStore = defineStore('main', {
         strategies: [
             {
                 key: 'dk_main', // 自定义存储名称
-                // storage: storageOwn, // 自定义存储位置
+                storage: storageOwn, // 自定义存储位置
                 paths: []
             }
         ]
