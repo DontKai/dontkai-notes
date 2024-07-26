@@ -4,7 +4,13 @@
 
 # upload 上传
 
-上传组件
+## 示例
 
 <!-- 示例代码 -->
 <Example />
+
+## 代码
+
+::: details 点我查看代码
+<<< @/components/BaseUpload/index.vue
+:::
