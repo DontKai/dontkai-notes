@@ -22,7 +22,7 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
         `circle(${Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y))}px at ${x}px ${y}px)`
     ]
 
-    await document.startViewTransition(async () => {
+    await (document as any).startViewTransition(async () => {
         isDark.value = !isDark.value
         await nextTick()
     }).ready

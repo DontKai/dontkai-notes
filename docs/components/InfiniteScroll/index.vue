@@ -1,7 +1,7 @@
 <!--
  * @file: 无限滚动组件
  * @author: DontK
- * @LastEditTime: 2024-07-26 15:49:17
+ * @LastEditTime: 2024-07-26 16:26:56
 -->
 <template>
     <div
@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed } from 'vue'
+import { ref, reactive, computed, Ref } from 'vue'
 
 const emit = defineEmits(['onLoad'])
 const props = withDefaults(
@@ -36,12 +36,12 @@ const props = withDefaults(
         distance: 30
     }
 )
-const dataList = defineModel('list', {
+const dataList = defineModel<any>('list', {
     get(val) {
         return reactive(val || [])
     }
 })
-const pageNum = defineModel('pageNum', { default: 1, type: Number, required: false })
+const pageNum = defineModel<any>('pageNum', { default: 1, type: Number, required: false })
 const loading = ref<boolean>(false)
 const noMore = ref<boolean>(true)
 const disabled = computed(() => loading.value || noMore.value)

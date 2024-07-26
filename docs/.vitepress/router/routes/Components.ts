@@ -1,7 +1,7 @@
 /*
  * @file: 组件 路由
  * @author: DontK
- * @LastEditTime: 2024-07-26 14:55:54
+ * @LastEditTime: 2024-07-26 16:17:08
  */
 export default [
     {
@@ -15,5 +15,9 @@ export default [
     {
         text: '无限滚动',
         link: '/page/Components/infiniteScroll/'
+    },
+    {
+        text: '文本超出隐藏，鼠标悬浮显示',
+        link: '/page/Components/overflowTooltip/'
     }
 ]

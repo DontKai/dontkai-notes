@@ -17,6 +17,9 @@ dependencies:
   pinia-plugin-persist:
     specifier: ^1.0.0
     version: 1.0.0(pinia@2.1.7)(vue@3.4.21)
+  vue:
+    specifier: ^3.4.15
+    version: 3.4.21
 
 devDependencies:
   less:
