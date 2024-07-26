@@ -4,7 +4,7 @@ import 'element-plus/dist/index.css'
 import './custom.css'
 import { setupElement } from '../plugins/ElementPlus'
 import { setupDirective } from '../../directive'
-import { setupStore } from '../../store'
+// import { setupStore } from '../../store'
 import { setupComponents } from '../../components'
 import CustomLayout from './Layout.vue'
 
@@ -13,7 +13,7 @@ export default {
     Layout: CustomLayout,
     enhanceApp: ({ app }) => {
         // 注册pinia
-        setupStore(app)
+        // setupStore(app)
         // 注册element-plus
         setupElement(app)
         // 注册自定义指令

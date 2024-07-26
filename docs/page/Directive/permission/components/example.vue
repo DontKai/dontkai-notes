@@ -5,7 +5,7 @@
             <KTestButton text="角色2按钮" @call="testClick(2)" />
             <KTestButton text="角色3按钮" @call="testClick(3)" />
         </div>
-        <div>角色按钮权限：{{ usePermission.buttonList }}</div>
+        <div>角色按钮权限：{{ getStorage('buttonList') }}</div>
         <div style="margin-top: 10px">
             按钮显示权限：
             <el-button v-permission="['test:add']">新增</el-button>
@@ -14,17 +14,16 @@
     </KDemoCard>
 </template>
 <script setup lang="ts">
-import usePermissionStore from '../../../../store/modules/usePermissionStore'
+import useStorage from '../../../../hooks/useStorage.ts'
 
-const usePermission = usePermissionStore()
-
+const { setStorage, getStorage } = useStorage()
 const testClick = (type: number) => {
     if (type === 1) {
-        usePermission.buttonList = ['test:add', 'test:edit']
+        setStorage('buttonList', ['test:add', 'test:edit'])
     } else if (type === 2) {
-        usePermission.buttonList = ['test:add']
+        setStorage('buttonList', ['test:add'])
     } else if (type === 3) {
-        usePermission.buttonList = ['test:edit']
+        setStorage('buttonList', ['test:edit'])
     }
     window.location.reload()
 }
