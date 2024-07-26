@@ -31,11 +31,19 @@ import {
     ElAutocomplete,
     ElImage,
     ElImageViewer,
-    ElDrawer,
     ElPopover,
     ElInfiniteScroll,
-    ElLoading
+    ElLoading,
+    ElAvatar,
+    ElResult,
+    ElCascader,
+    ElSwitch,
+    ElRadio,
+    ElDrawer,
+    ElCascaderPanel,
+    ElEmpty
 } from 'element-plus'
+import type { App } from 'vue'
 
 const elementPlus = {
     install(Vue: any) {
@@ -71,12 +79,19 @@ const elementPlus = {
         Vue.component('ElAutocomplete', ElAutocomplete)
         Vue.component('ElImage', ElImage)
         Vue.component('ElImageViewer', ElImageViewer)
-        Vue.component('ElDrawer', ElDrawer)
         Vue.component('ElPopover', ElPopover)
+        Vue.component('ElAvatar', ElAvatar)
+        Vue.component('ElResult', ElResult)
+        Vue.component('ElCascader', ElCascader)
+        Vue.component('ElSwitch', ElSwitch)
+        Vue.component('ElRadio', ElRadio)
+        Vue.component('ElDrawer', ElDrawer)
+        Vue.component('ElCascaderPanel', ElCascaderPanel)
+        Vue.component('ElEmpty', ElEmpty)
     }
 }
 
-export const setupElementPlus = (app: any) => {
+export const setupElementPlus = (app: App<Element>) => {
     app.use(elementPlus)
     app.use(ElInfiniteScroll)
     app.use(ElLoading)
