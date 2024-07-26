@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import Example from './components/example.vue'
+    // import Example from './components/example.vue'
 </script>
 
 # v-permission 按钮权限
@@ -7,7 +7,7 @@
 ## 使用示例
 
 <!-- 示例代码 -->
-<Example />
+<!-- <Example /> -->
 
 ## 代码
 

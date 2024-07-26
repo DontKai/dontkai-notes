@@ -1,3 +1,4 @@
+<!--
 <template>
     <KDemoCard>
         <div>
@@ -48,3 +49,4 @@ const handleCurrentChange = (item: any) => {
     cursor: pointer;
 }
 </style>
+  -->

@@ -1,15 +1,16 @@
 /*
  * @file: 按钮权限自定义指令
  * @author: DontK
- * @LastEditTime: 2024-07-26 17:00:06
+ * @LastEditTime: 2024-07-26 17:30:05
  */
 import type { App, Directive, DirectiveBinding } from 'vue'
-import useStorage from '../../hooks/useStorage'
+// import useStorage from '../../hooks/useStorage'
 
-const { getStorage } = useStorage()
+// const { getStorage } = useStorage()
 
 const checkPermission = (el: HTMLElement, binding: DirectiveBinding) => {
-    const buttonList = getStorage('buttonList') || [] // 所有按钮数据
+    // const buttonList = getStorage('buttonList') || [] // 所有按钮数据
+    const buttonList = [] // 所有按钮数据
 
     // value 获取用户使用自定义指令绑定的内容
     const { value: permissionFlag } = binding

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import Example from './components/example.vue'
+    // import Example from './components/example.vue'
 </script>
 
 # v-dragResize 拖拽放大缩小
@@ -33,7 +33,7 @@
 :::
 
 <!-- 示例代码 -->
-<Example />
+<!-- <Example /> -->
 
 ## 代码
 

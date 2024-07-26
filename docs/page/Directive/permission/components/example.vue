@@ -1,3 +1,4 @@
+<!--
 <template>
     <KDemoCard>
         <div class="button-list">
@@ -35,3 +36,4 @@ const testClick = (type: number) => {
     gap: 10px;
 }
 </style>
+-->
