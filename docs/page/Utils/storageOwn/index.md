@@ -1,3 +1,3 @@
-# localStorage 加密
+# 编码
 
 <<< @/utils/storageOwn.ts

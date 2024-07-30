@@ -1,7 +1,7 @@
 /*
- * @file: localStorage加密存储
+ * @file: 编码存储
  * @author: DontK
- * @LastEditTime: 2024-04-18 18:28:01
+ * @LastEditTime: 2024-07-30 09:48:15
  */
 const storageOwn: any = {
     setItem(key: string, value: any) {

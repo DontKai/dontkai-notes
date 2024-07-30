@@ -1,7 +1,7 @@
 /*
  * @file: 组件 路由
  * @author: DontK
- * @LastEditTime: 2024-07-26 16:17:08
+ * @LastEditTime: 2024-07-30 14:09:05
  */
 export default [
     {
@@ -19,5 +19,9 @@ export default [
     {
         text: '文本超出隐藏，鼠标悬浮显示',
         link: '/page/Components/overflowTooltip/'
+    },
+    {
+        text: '拖拽移动，拖大，拖小',
+        link: '/page/Components/baseDrag/'
     }
 ]

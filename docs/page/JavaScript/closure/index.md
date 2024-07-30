@@ -161,7 +161,7 @@ function createPubSub() {
     }
 }
 
-// 使用示例
+// 示例
 const pubSub = createPubSub()
 
 // 订阅事件

@@ -1,7 +1,7 @@
 /*
  * @file: 自定义指令 路由
  * @author: DontK
- * @LastEditTime: 2024-07-25 13:35:05
+ * @LastEditTime: 2024-07-30 14:07:38
  */
 export default [
     {
@@ -15,9 +15,5 @@ export default [
     {
         text: 'v-copy',
         link: '/page/Directive/copy/'
-    },
-    {
-        text: 'v-dragResize',
-        link: '/page/Directive/dragResize/'
     }
 ]
