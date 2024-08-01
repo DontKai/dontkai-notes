@@ -251,19 +251,21 @@ console.log(res2) // -1
 
 ## 20、some()
 
-用于检测数组中的元素是否满足指定条件，如果有一个元素满足条件，则表达式返回 true , 剩余的元素不会再执行检测，没有满足条件的元素，则返回 false。
+检测数组中的元素是否存在一个数据满足指定条件，一旦找到则不会继续迭代下去。存在返回 true，未存在返回 false
 
-不会对空数组进行检测、也不会改变原数组
+空数组返回 false;
 
 ```javascript
 const arr = [1, 2, 3, 4, 5]
-const res = arr.some((item) => item === 3)
+const res = arr.some((item) => item > 1)
 console.log(res) // true
 ```
 
 ## 21、every()
 
-用于数组中的每一项是否符合判断条件，返回布尔值，全部满足返回 true，有一项不满足返回 false。
+检测数组中的元素是否存在一个数据不满足指定条件，一旦找到则不会继续迭代下去。存在返回 false，未存在返回 true
+
+空数组返回 true;
 
 ```javascript
 const arr = [1, 2, 3, 4, 5]
