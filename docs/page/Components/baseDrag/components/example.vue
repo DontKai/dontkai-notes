@@ -4,8 +4,16 @@
             <KTestButton text="点击显示" @call="isShow = !isShow" />
         </div>
         <BaseDrag v-if="isShow" :minWidth="400" :minHeight="440">
-            <template #header>头部...</template>
-            <template #content>内容...</template>
+            <template #header>
+                <div class="header">
+                    <div class="title">标题</div>
+                </div>
+            </template>
+            <template #content>
+                <div class="content">
+                    <div class="content-wrapper">内容</div>
+                </div>
+            </template>
         </BaseDrag>
     </KDemoCard>
 </template>
@@ -21,5 +29,27 @@ const isShow = ref<boolean>(false)
     display: flex;
     align-items: center;
     gap: 10px;
+}
+.header {
+    padding: 10px;
+    color: var(--vp-c-purple);
+    .title {
+        background-color: rgba(255, 255, 255, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.content {
+    height: 100%;
+    padding: 10px;
+    color: var(--vp-c-purple);
+    .content-wrapper {
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 </style>
