@@ -24,25 +24,25 @@ Electron 是一个使用 JavaScript、HTML 和 CSS 构建桌面应用程序的�
 ## electron - loading.html
 
 ::: details 点我查看代码
-<<< @/electron/loading.html
+<<< @/plugins/Electron/loading.html
 :::
 
 ## electron - main.js
 
 ::: details 点我查看代码
-<<< @/electron/main.js
+<<< @/plugins/Electron/main.js
 :::
 
 ## electron - preload.js
 
 ::: details 点我查看代码
-<<< @/electron/preload.js
+<<< @/plugins/Electron/preload.js
 :::
 
 ## electron - update.js
 
 ::: details 点我查看代码
-<<< @/electron/update.js
+<<< @/plugins/Electron/update.js
 :::
 
 ## .eslintignore
