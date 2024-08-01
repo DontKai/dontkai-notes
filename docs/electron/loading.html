@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splash Screen</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .splash {
+            position: relative;
+            height: 100%;
+            background-color: #fff;
+        }
+        .splash-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #333;
+            font-size: 20px;
+            font-family: 'Arial', sans-serif;
+        }
+        .splash-content .spinner {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            border: 10px solid #f3f3f3;
+            border-top: 10px solid #333;
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="splash">
+        <div class="splash-content">
+            <div class="spinner"></div>
+            <span>加载中...</span>
+        </div>
+    </div>
+</body>
+</html>

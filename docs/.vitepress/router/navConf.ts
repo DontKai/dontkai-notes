@@ -10,7 +10,8 @@ export default [
             { text: '组件', link: '/page/Components/textEditor/' },
             { text: 'Hooks', link: '/page/Hooks/useRequest/' },
             { text: 'Utils', link: '/page/Utils/is/' },
-            { text: '自定义指令', link: '/page/Directive/permission/' }
+            { text: '自定义指令', link: '/page/Directive/permission/' },
+            { text: '插件', link: '/page/Plugins/element-plus/' }
         ]
     },
     {
