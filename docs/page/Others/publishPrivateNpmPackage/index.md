@@ -4,18 +4,24 @@
 
 ```sh
 npm config get registry
+# https://registry.npmjs.org/
 ```
 
 2. 设置私有镜像源
 
 ```sh
 npm config set registry https://nexus.adas.com/repository/public/
+
+# 查看镜像源
+npm config get registry
+# https://nexus.adas.com/repository/public/
 ```
 
 3. 登录私有镜像源
 
 ```sh
 npm login --registry=https://nexus.adas.com/repository/npm-adas-host/
+
 # 输入用户名和密码
 # Username: xxxxxx
 # Password: xxxxxx
@@ -25,6 +31,7 @@ npm login --registry=https://nexus.adas.com/repository/npm-adas-host/
 
 ```sh
 npm whoami --registry=https://nexus.adas.com/repository/npm-adas-host/
+# admin
 ```
 
 5. 发布包
