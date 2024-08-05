@@ -1,7 +1,7 @@
 <!--
  * @file: 文件手动上传
  * @author: DontK
- * @LastEditTime: 2024-08-05 09:09:58
+ * @LastEditTime: 2024-08-05 09:27:11
 -->
 <template>
     <el-upload
@@ -77,7 +77,7 @@ const beforeUpload = (rawFile: any) => {
     return true
 }
 
-// 上传文件
+// 单个文件上传，触发
 const httpRequest = (rawFile: any): any => {
     if (!props.replace && props.totalLimit && props.total + 1 > props.totalLimit) {
         ElMessage.error(`上传的文件总数不能超过${props.totalLimit}个！`)
@@ -87,7 +87,7 @@ const httpRequest = (rawFile: any): any => {
     uploadRef.value!.clearFiles() // 上传完当前文件后清空组件文件列表
 }
 
-// 替换文件
+// 多选文件上传时 触发
 const handleExceed: UploadProps['onExceed'] = (files) => {
     if (props.singleLimit && files.length > props.singleLimit) {
         ElMessage.error(`单次上传的文件不能超过${props.singleLimit}个！`)
@@ -97,7 +97,7 @@ const handleExceed: UploadProps['onExceed'] = (files) => {
         ElMessage.error(`上传的文件总数不能超过${props.totalLimit}个！`)
         return
     }
-    if (props.replace && uploadRef.value) {
+    if (props.replace) {
         uploadRef.value!.clearFiles()
         const file = files[0] as UploadRawFile
         file.uid = genFileId()
@@ -108,6 +108,12 @@ const handleExceed: UploadProps['onExceed'] = (files) => {
         uploadRef.value!.clearFiles() // 上传完当前文件后清空组件文件列表
     }
 }
+
+defineExpose({
+    beforeUpload,
+    httpRequest,
+    handleExceed
+})
 </script>
 
 <style lang="less" scoped>
@@ -115,16 +121,6 @@ const handleExceed: UploadProps['onExceed'] = (files) => {
     height: 100%;
     width: 100%;
 }
-// :deep(.el-upload) {
-//     height: 100%;
-//     width: 100%;
-//     .el-upload-dragger {
-//         height: 100%;
-//         padding: 0;
-//         background-color: transparent !important;
-//         border: none !important;
-//     }
-// }
 .not-allow-allowed {
     :deep(.el-upload) {
         cursor: not-allowed;

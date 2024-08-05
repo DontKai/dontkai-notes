@@ -1,7 +1,7 @@
 <!--
  * @file:
  * @author: DontK
- * @LastEditTime: 2024-07-26 14:18:06
+ * @LastEditTime: 2024-08-05 09:23:12
 -->
 <template>
     <KDemoCard>
@@ -17,7 +17,7 @@
                 :file-size-limit="3"
                 @import-file="importFile"
             >
-                <KTestButton text="点击上传" @call="isShow = true" />
+                <KTestButton text="点击上传" />
             </BaseUpload>
             <div>已上传文件：{{ filesOne.map((file: any) => file.name).join(',') }}</div>
         </div>
@@ -36,7 +36,7 @@
                 :file-size-limit="1"
                 @import-file="importFileTwo"
             >
-                <KTestButton text="点击上传" @call="isShow = true" />
+                <KTestButton text="点击上传" />
             </BaseUpload>
             <div>已上传文件：{{ filesTwo.map((file: any) => file.name).join(',') }}</div>
         </div>
@@ -49,7 +49,7 @@
                 :total-limit="1"
                 @import-file="importFileThree"
             >
-                <KTestButton text="点击上传" @call="isShow = true" />
+                <KTestButton text="点击上传" />
             </BaseUpload>
             <div>已上传文件：{{ filesThree.map((file: any) => file.name).join(',') }}</div>
         </div>
@@ -63,7 +63,7 @@
                 replace
                 @import-file="importFileFour"
             >
-                <KTestButton text="点击上传" @call="isShow = true" />
+                <KTestButton text="点击上传" />
             </BaseUpload>
             <div>已上传文件：{{ filesFour.map((file: any) => file.name).join(',') }}</div>
         </div>
