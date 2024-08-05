@@ -1,7 +1,7 @@
 <!--
  * @file: 文件手动上传
  * @author: DontK
- * @LastEditTime: 2024-07-30 14:14:53
+ * @LastEditTime: 2024-08-05 09:08:00
 -->
 <template>
     <el-upload
@@ -64,8 +64,9 @@ const fileList = defineModel<any>('fileList', {
 const beforeUpload = (rawFile: any) => {
     const exts = rawFile.name.split('.')
     const ext = `.${exts[exts.length - 1]}`
+    const ext2 = `.${rawFile.type.split('/')[1]}`
     const accepts = (props.accept || '').split(',')
-    if (!accepts.includes(ext)) {
+    if (!accepts.includes(ext2) || (accepts.includes(ext2) && !accepts.includes(ext))) {
         ElMessage.error(`文件格式应为 ${props.accept} 格式！`)
         return false
     }
