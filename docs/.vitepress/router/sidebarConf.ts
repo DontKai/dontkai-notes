@@ -1,7 +1,7 @@
 /*
  * @file: 侧边栏导航
  * @author: DontK
- * @LastEditTime: 2024-08-01 15:32:55
+ * @LastEditTime: 2024-08-05 10:29:05
  */
 import { DefaultTheme } from 'vitepress'
 import CSS from './routes/CSS'
@@ -12,6 +12,7 @@ import Hooks from './routes/Hooks'
 import Utils from './routes/Utils'
 import Directive from './routes/Directive'
 import Plugins from './routes/Plugins'
+import Others from './routes/Others'
 import Python from './routes/Python'
 
 const sidebarConf: DefaultTheme.Sidebar = {
@@ -23,6 +24,7 @@ const sidebarConf: DefaultTheme.Sidebar = {
     '/page/Utils/': Utils,
     '/page/Directive/': Directive,
     '/page/Plugins/': Plugins,
+    '/page/Others/': Others,
     '/page/Python/': Python
 }
 

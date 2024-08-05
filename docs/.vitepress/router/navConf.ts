@@ -11,6 +11,7 @@ export default [
             { text: 'Hooks', link: '/page/Hooks/useRequest/' },
             { text: 'Utils', link: '/page/Utils/is/' },
             { text: '自定义指令', link: '/page/Directive/permission/' },
+            { text: 'Others', link: '/page/Others/publishPrivateNpmPackage/' },
             { text: '插件', link: '/page/Plugins/element-plus/' }
         ]
     },
