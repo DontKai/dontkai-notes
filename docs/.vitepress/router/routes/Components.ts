@@ -1,7 +1,7 @@
 /*
  * @file: 组件 路由
  * @author: DontK
- * @LastEditTime: 2024-07-30 14:09:05
+ * @LastEditTime: 2024-08-06 15:24:34
  */
 export default [
     {
@@ -13,8 +13,12 @@ export default [
         link: '/page/Components/baseUpload/'
     },
     {
-        text: '无限滚动',
-        link: '/page/Components/infiniteScroll/'
+        text: '无限滚动(向下)',
+        link: '/page/Components/scrollInfinite/'
+    },
+    {
+        text: '无限滚动(向上向下)',
+        link: '/page/Components/scrollInfinitePlus/'
     },
     {
         text: '文本超出隐藏，鼠标悬浮显示',

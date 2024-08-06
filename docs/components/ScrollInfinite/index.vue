@@ -1,7 +1,7 @@
 <!--
  * @file: 无限滚动组件
  * @author: DontK
- * @LastEditTime: 2024-07-26 16:26:56
+ * @LastEditTime: 2024-08-06 15:22:20
 -->
 <template>
     <div
@@ -10,10 +10,22 @@
         v-infinite-scroll="onLoadMore"
         :infinite-scroll-disabled="disabled"
         :infinite-scroll-distance="props.distance"
+        :infinite-scroll-immediate="false"
     >
-        <slot></slot>
-        <div v-if="loading" v-loading="loading" class="infinite-loading"></div>
-        <div class="infinite-no-more" v-if="dataList.length >= props.pageSize && noMore">没有更多数据</div>
+        <!-- 列表 -->
+        <div class="infinite-list">
+            <slot></slot>
+        </div>
+        <!-- 加载中 -->
+        <div v-if="loading">
+            <slot name="loading">
+                <div class="infinite-loading" v-loading="loading"></div>
+            </slot>
+        </div>
+        <!-- 没有更多数据 -->
+        <div class="infinite-no-more" v-if="dataList.length >= params.pageSize && noMore">
+            <slot name="noMore"> 没有更多数据 </slot>
+        </div>
     </div>
     <div v-else class="no-data">
         <slot name="empty">
@@ -23,45 +35,54 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed, Ref } from 'vue'
+import { ref, reactive, computed } from 'vue'
 
 const emit = defineEmits(['onLoad'])
 const props = withDefaults(
     defineProps<{
-        pageSize: number
         distance?: number
     }>(),
     {
-        pageSize: 100,
         distance: 30
     }
 )
 const dataList = defineModel<any>('list', {
+    required: true,
     get(val) {
         return reactive(val || [])
     }
 })
-const pageNum = defineModel<any>('pageNum', { default: 1, type: Number, required: false })
+const params = defineModel<any>('params', {
+    required: true,
+    get(val) {
+        return reactive(
+            val || {
+                pageNum: 1,
+                pageSize: 10
+            }
+        )
+    }
+})
 const loading = ref<boolean>(false)
 const noMore = ref<boolean>(true)
 const disabled = computed(() => loading.value || noMore.value)
 
 // 获取列表
-const getDataList = async (req: Function, params: any, isInit: boolean = false) => {
+const getDataList = async (req: Function, isInit: boolean = false) => {
     if (isInit) {
-        pageNum.value = 1
+        params.value.pageNum = 1
         noMore.value = true
         dataList.value = []
     }
     try {
-        const res: any = await req(params)
+        const res: any = await req(params.value)
         const list = res?.data?.list || []
         if (isInit) {
             dataList.value = list
         } else {
             dataList.value.push(...list)
         }
-        if (list.length < Number(props.pageSize)) {
+        if (list.length < Number(params.value.pageSize)) {
             noMore.value = true
         } else {
             noMore.value = false
@@ -77,8 +98,8 @@ const getDataList = async (req: Function, params: any, isInit: boolean = false) 
 // 加载更多报告列表
 const onLoadMore = () => {
     if (noMore.value) return
-    if (pageNum.value) {
-        pageNum.value += 1
+    if (params.value.pageNum) {
+        params.value.pageNum += 1
         loading.value = true
         setTimeout(() => {
             emit('onLoad')

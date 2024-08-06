@@ -1,17 +1,16 @@
 <!--
  * @file:
  * @author: DontK
- * @LastEditTime: 2024-07-26 15:48:43
+ * @LastEditTime: 2024-08-06 15:27:57
 -->
 <template>
     <KDemoCard>
         <KTestButton text="搜索列表" @call="searchDataList" />
-        <div class="infinite">
-            <InfiniteScroll
-                ref="infiniteScrollRef"
+        <div class="infinite" v-loading="!dataList.length && tableLoading">
+            <ScrollInfinite
+                ref="scrollInfiniteRef"
                 v-model:list="dataList"
-                v-model:pageNum="searchForm.pageNum"
-                :pageSize="searchForm.pageSize"
+                v-model:params="searchForm"
                 @onLoad="getDataList"
             >
                 <div class="scroll-inner">
@@ -19,13 +18,14 @@
                         {{ `${index + 1}:${data}` }}
                     </div>
                 </div>
-            </InfiniteScroll>
+            </ScrollInfinite>
         </div>
     </KDemoCard>
 </template>
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import InfiniteScroll from '../../../../components/InfiniteScroll/index.vue'
+import ScrollInfinite from '../../../../components/ScrollInfinite/index.vue'
+import useRequest from '../../../../hooks/useRequest'
 
 const testReq = (data: any) => {
     console.log('data: ', data)
@@ -53,17 +53,17 @@ const testReq = (data: any) => {
         }, 1000)
     })
 }
+const [tableLoading, tableReq] = useRequest(testReq)
 const searchForm = ref<any>({
     pageNum: 1,
-    pageSize: 10,
-    searchContent: ''
+    pageSize: 10
 })
-const infiniteScrollRef = ref<any>()
+const scrollInfiniteRef = ref<any>()
 const dataList = ref<any[]>([])
 
 // 获取列表
 const getDataList = async (isInit: boolean = false) => {
-    infiniteScrollRef.value!.getDataList(testReq, searchForm.value, isInit)
+    scrollInfiniteRef.value!.getDataList(tableReq, isInit)
 }
 
 // 搜索列表
