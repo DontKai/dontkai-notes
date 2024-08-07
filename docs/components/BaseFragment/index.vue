@@ -1,7 +1,7 @@
 <!--
  * @file: 碎片显示动画
  * @author: DontK
- * @LastEditTime: 2024-08-07 14:47:05
+ * @LastEditTime: 2024-08-07 16:23:35
 -->
 <template>
     <div class="base-fragment">
@@ -28,7 +28,18 @@ const props = withDefaults(
         cols?: number
         rows?: number
         delay?: number
-        direction?: 'top-bottom' | 'bottom-top' | 'left-right' | 'right-left' | 'random'
+        direction?:
+            | 'top-bottom'
+            | 'bottom-top'
+            | 'left-right'
+            | 'right-left'
+            | 'left-top-right-bottom-corner'
+            | 'left-bottom-right-top-corner'
+            | 'right-top-left-bottom-corner'
+            | 'right-bottom-left-top-corner'
+            | 'random'
+            | 'center-around'
+            | 'around-center'
     }>(),
     {
         width: 300,
@@ -51,7 +62,7 @@ const height = computed(() => {
     return props.height ? `${props.height}px` : 'fit-content'
 })
 
-const getRandom = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
+const getRandom = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1) + min)
 
 const setDelay = (col: number, row: number) => {
     if (props.direction === 'top-bottom') {
@@ -66,8 +77,29 @@ const setDelay = (col: number, row: number) => {
     if (props.direction === 'right-left') {
         return `${(props.cols - col) * props.delay}ms`
     }
+    if (props.direction === 'left-top-right-bottom-corner') {
+        return `${(row + col) * props.delay}ms`
+    }
+    if (props.direction === 'left-bottom-right-top-corner') {
+        return `${(props.rows - row + col) * props.delay}ms`
+    }
+    if (props.direction === 'right-top-left-bottom-corner') {
+        return `${(row + props.cols - col) * props.delay}ms`
+    }
+    if (props.direction === 'right-bottom-left-top-corner') {
+        return `${(props.rows - row + props.cols - col) * props.delay}ms`
+    }
     if (props.direction === 'random') {
         return `${getRandom(0, props.cols + props.rows) * props.delay}ms`
+    }
+    if (props.direction === 'center-around') {
+        return `${(Math.abs(props.cols / 2 - col) + Math.abs(props.rows / 2 - row)) * props.delay}ms`
+    }
+    if (props.direction === 'around-center') {
+        return `${
+            (props.cols / 2 - Math.abs(props.cols / 2 - col) + (props.cols / 2 - Math.abs(props.rows / 2 - row))) *
+            props.delay
+        }ms`
     }
     return ''
 }
@@ -81,9 +113,9 @@ const setStyle = (col: number, row: number) => {
             ((row * props.height) / props.rows) * -1
         }px`,
         backgroundSize: `${props.width}px ${props.height}px`,
-        animationDelay: setDelay(col, row),
-        '--rotateX': props.direction === 'random' ? '0deg' : `rotateX(${(col + row) % 2 ? -180 : 0}deg)`,
-        '--rotateY': props.direction === 'random' ? '0deg' : `rotateY(${(col + row) % 2 ? 0 : -180}deg)`
+        animationDelay: setDelay(col, row)
+        // '--rotateX': `rotateX(${(col + row) % 2 ? -180 : 0}deg)`,
+        // '--rotateY': `rotateY(${(col + row) % 2 ? 0 : -180}deg)`
     }
 }
 
@@ -99,7 +131,7 @@ onMounted(() => {})
     align-items: center;
     .small-box {
         opacity: 0;
-        animation: smallBoxAnimate 2000ms linear forwards;
+        animation: smallBoxAnimate 1000ms linear forwards;
         --rotateX: rotateX(0);
         --rotateY: rotateY(0);
         transform: var(--rotateX) var(--rotateY) scale(0.8);
