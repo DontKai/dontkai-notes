@@ -1,7 +1,7 @@
 <!--
  * @file: 碎片显示动画
  * @author: DontK
- * @LastEditTime: 2024-08-07 14:38:33
+ * @LastEditTime: 2024-08-07 14:47:05
 -->
 <template>
     <div class="base-fragment">
@@ -28,14 +28,14 @@ const props = withDefaults(
         cols?: number
         rows?: number
         delay?: number
-        direction?: 'top-bottom' | 'bottom-top' | 'left-right' | 'right-left'
+        direction?: 'top-bottom' | 'bottom-top' | 'left-right' | 'right-left' | 'random'
     }>(),
     {
         width: 300,
         height: 600,
         url: '',
-        cols: 20,
-        rows: 20,
+        cols: 15,
+        rows: 10,
         delay: 50,
         direction: 'top-bottom'
     }
@@ -51,6 +51,8 @@ const height = computed(() => {
     return props.height ? `${props.height}px` : 'fit-content'
 })
 
+const getRandom = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
+
 const setDelay = (col: number, row: number) => {
     if (props.direction === 'top-bottom') {
         return `${row * props.delay}ms`
@@ -64,6 +66,9 @@ const setDelay = (col: number, row: number) => {
     if (props.direction === 'right-left') {
         return `${(props.cols - col) * props.delay}ms`
     }
+    if (props.direction === 'random') {
+        return `${getRandom(0, props.cols + props.rows) * props.delay}ms`
+    }
     return ''
 }
 const setStyle = (col: number, row: number) => {
@@ -76,8 +81,9 @@ const setStyle = (col: number, row: number) => {
             ((row * props.height) / props.rows) * -1
         }px`,
         backgroundSize: `${props.width}px ${props.height}px`,
-        animationDelay: setDelay(col, row)
-        // willChange: 'transform'
+        animationDelay: setDelay(col, row),
+        '--rotateX': props.direction === 'random' ? '0deg' : `rotateX(${(col + row) % 2 ? -180 : 0}deg)`,
+        '--rotateY': props.direction === 'random' ? '0deg' : `rotateY(${(col + row) % 2 ? 0 : -180}deg)`
     }
 }
 
