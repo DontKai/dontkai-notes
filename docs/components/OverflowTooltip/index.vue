@@ -1,3 +1,8 @@
+<!--
+ * @file: 一行超出隐藏 显示tooltip
+ * @author: DontK
+ * @LastEditTime: 2024-08-07 13:18:07
+-->
 <template>
     <el-tooltip :effect="props.effect" :placement="props.placement" :show-after="props.showAfter" :disabled="isShow">
         <template #content>
