@@ -1,12 +1,10 @@
 <!--
  * @file: 无限滚动组件
  * @author: DontK
- * @LastEditTime: 2024-08-06 18:24:41
+ * @LastEditTime: 2024-08-07 11:15:12
 -->
 <template>
     <div class="infinite-box">
-        {{ topLoading }}
-        {{ bottomLoading }}
         <el-scrollbar ref="scrollbarDom" @scroll="scroll">
             <!-- 没有更多数据 -->
             <div class="infinite-no-more" v-if="topNoMore">
@@ -35,7 +33,7 @@
                 </slot>
             </div>
             <!-- 没有更多数据 -->
-            <div class="infinite-no-more" v-if="bottomNoMore">
+            <div class="infinite-no-more" v-if="bottomNoMore && topNoMore">
                 <slot name="noMore"> 没有更多数据 </slot>
             </div>
         </el-scrollbar>
@@ -43,16 +41,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed, nextTick } from 'vue'
+import { ref, reactive, nextTick } from 'vue'
 
-const emit = defineEmits(['onLoad'])
 const props = withDefaults(
     defineProps<{
+        req: Function // 接口
         distance?: number // 距离上/下距离 加载数据
         initLoading?: boolean // 初始加载 使用上/下 加载loading
     }>(),
     {
-        distance: 80,
+        req: () => () => {},
+        distance: 10,
         initLoading: false
     }
 )
@@ -84,20 +83,21 @@ const bottomPageNum = ref<number>(1)
 const bottomNoMore = ref<boolean>(false)
 const lastScrollHeight = ref<number>(0) // 滚动最后高度
 const lastHeight = ref<any>(0) // 初次滚动最后高度
+const isInit = ref<boolean>(true)
 
 /**
  * @description:  获取列表
- * @param req 请求接口
  * @param initType 初始类型 0-不初始数据 1-初始数据 2-初始数据-不重置分页
  * @param nextPage 是否下一页
  */
-const getDataList = async (req: Function, initType: 0 | 1 | 2 = 1, nextPage?: boolean) => {
+const getDataList = async (initType: 0 | 1 | 2 = 1, nextPage?: boolean) => {
     if (initType) {
         dataList.value = []
         lastScrollHeight.value = 0
         lastHeight.value = 0
         topNoMore.value = false
         bottomNoMore.value = false
+        isInit.value = true
         if (props.initLoading) {
             topLoading.value = false
             bottomLoading.value = true
@@ -109,30 +109,45 @@ const getDataList = async (req: Function, initType: 0 | 1 | 2 = 1, nextPage?: bo
         }
     }
     try {
-        const res: any = await req(params.value)
+        const res: any = await props.req(params.value)
         const list = res?.data?.list || []
         // 初始加载数据
         if (initType) {
             dataList.value = [...list]
-            console.log(list.length < Number(params.value.pageSize))
             if (list.length < Number(params.value.pageSize)) {
                 // 初始页码为1
                 if (params.value.pageNum === 1) {
                     topNoMore.value = true
+                    bottomNoMore.value = true
                 } else {
+                    topNoMore.value = true
+                    bottomNoMore.value = false
                     // 初始页码不为1，则数据不够需要获取上一页的数据
                     // (例如：直接设置页码为某一页数据，设置的页码可能为最后一页，数据量不够pageSize)
-                    topNoMore.value = true
                     bottomLoading.value = true
                     bottomPageNum.value -= 1
                     params.value.pageNum = bottomPageNum.value
-                    emit('onLoad', 0, true)
+                    getDataList(0, true)
                 }
-            } else {
+            } else if (list.length >= Number(params.value.pageSize)) {
+                // 初始页码为1
+                if (params.value.pageNum === 1) {
+                    bottomNoMore.value = true
+                } else {
+                    bottomNoMore.value = false
+                }
                 topNoMore.value = false
-                bottomNoMore.value = false
                 nextTick(() => {
-                    scrollbarDom.value.setScrollTop(scrollbarDom.value.wrapRef.scrollHeight)
+                    if (params.value.pageNum !== 1) {
+                        scrollbarDom.value.setScrollTop(
+                            scrollbarDom.value.wrapRef.scrollHeight -
+                                scrollbarDom.value.wrapRef.clientHeight -
+                                props.distance -
+                                10
+                        )
+                    } else {
+                        scrollbarDom.value.setScrollTop(scrollbarDom.value.wrapRef.scrollHeight)
+                    }
                     lastScrollHeight.value = scrollbarDom.value.wrapRef.scrollHeight
                     lastHeight.value = scrollbarDom.value.wrapRef.scrollHeight
                 })
@@ -140,7 +155,8 @@ const getDataList = async (req: Function, initType: 0 | 1 | 2 = 1, nextPage?: bo
         } else if (nextPage) {
             // 向下滚动加载数据
             dataList.value.push(...list)
-            if (list.length < Number(params.value.pageSize)) {
+            // 初始页码为1
+            if (params.value.pageNum === 1) {
                 bottomNoMore.value = true
             } else {
                 bottomNoMore.value = false
@@ -163,40 +179,40 @@ const getDataList = async (req: Function, initType: 0 | 1 | 2 = 1, nextPage?: bo
             topLoading.value = false
             bottomLoading.value = false
         }
+        isInit.value = false
     }
 }
 
 // 滚动加载列表
 const scroll = async (evt: any) => {
-    if (scrollbarDom.value) {
+    if (scrollbarDom.value && !isInit.value) {
         const { scrollTop } = evt
         // 滚动方向：scrollDirection>0 向下滚动，scrollDirection<0 向上滚动
         const scrollDirection = scrollTop - lastScrollHeight.value
         if (scrollDirection < 0 && !topNoMore.value) {
             // 向上滚动
-            if (scrollTop < props.distance && !topLoading.value) {
+            if (scrollTop <= props.distance && !topLoading.value) {
                 // 向上滚动加载 未加载
                 topLoading.value = true
                 topPageNum.value += 1
                 params.value.pageNum = topPageNum.value
-                emit('onLoad', 0, false)
-                scrollbarDom.value.setScrollTop(
-                    scrollbarDom.value.wrapRef.scrollHeight - lastHeight.value + props.distance
-                )
+                await getDataList(0, false)
+                // 设置滚动高度
+                scrollbarDom.value.setScrollTop(scrollbarDom.value.wrapRef.scrollHeight - lastHeight.value)
+                // 记录当前页的滚动高度
                 lastHeight.value = scrollbarDom.value.wrapRef.scrollHeight
             }
-        } else if (scrollDirection >= 0 && bottomPageNum.value > 1) {
-            console.log('evt: ', evt)
+        } else if (scrollDirection >= 0 && !bottomNoMore.value) {
             // 向下滚动
             if (
-                !bottomLoading.value &&
-                scrollbarDom.value.wrapRef.scrollHeight - scrollTop <
-                    scrollbarDom.value.wrapRef.offsetHeight + props.distance
+                scrollbarDom.value.wrapRef.scrollHeight - (scrollTop + scrollbarDom.value.wrapRef.clientHeight) <=
+                    props.distance &&
+                !bottomLoading.value
             ) {
                 bottomLoading.value = true
                 bottomPageNum.value -= 1
                 params.value.pageNum = bottomPageNum.value
-                emit('onLoad', 0, true)
+                await getDataList(0, true)
             }
         }
         lastScrollHeight.value = scrollTop
@@ -204,11 +220,11 @@ const scroll = async (evt: any) => {
 }
 
 // 设置当前页码
-const setCurrentPageNum = (num: number) => {
+const setCurrentPageNum = async (num: number) => {
     params.value.pageNum = num
     topPageNum.value = num
     bottomPageNum.value = num
-    emit('onLoad', 2, true)
+    await getDataList(2, true)
 }
 
 defineExpose({

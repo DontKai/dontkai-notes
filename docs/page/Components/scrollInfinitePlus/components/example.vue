@@ -1,20 +1,22 @@
 <!--
  * @file:
  * @author: DontK
- * @LastEditTime: 2024-08-06 18:17:44
+ * @LastEditTime: 2024-08-07 11:08:18
 -->
 <template>
     <KDemoCard>
         <div class="button-list">
             <KTestButton text="搜索列表" @call="searchDataList" />
-            <KTestButton text="跳转到第3页" @call="goToPageNum" />
+            <KTestButton text="跳转到第3页" @call="goToPageNum(3)" />
+            <KTestButton text="跳转到第2页" @call="goToPageNum(2)" />
+            <KTestButton text="跳转到第1页" @call="goToPageNum(1)" />
         </div>
         <div class="infinite" v-loading="!dataList.length && tableLoading">
             <ScrollInfinitePlus
                 ref="scrollInfinitePlusRef"
                 v-model:list="dataList"
                 v-model:params="searchForm"
-                @onLoad="getTableData"
+                :req="tableReq"
             >
                 <div class="scroll-inner">
                     <div class="scroll-inner-item" v-for="data in dataList" :key="data">
@@ -72,12 +74,12 @@ const dataList = ref<any[]>([])
 
 // 获取列表
 const getTableData = async (initType: 0 | 1 | 2 = 1, nextPage?: boolean) => {
-    scrollInfinitePlusRef.value!.getDataList(tableReq, initType, nextPage)
+    await scrollInfinitePlusRef.value!.getDataList(initType, nextPage)
 }
 
 // 跳转到指定页面
-const goToPageNum = () => {
-    scrollInfinitePlusRef.value!.setCurrentPageNum(3)
+const goToPageNum = (num: number) => {
+    scrollInfinitePlusRef.value!.setCurrentPageNum(num)
 }
 
 // 搜索列表
