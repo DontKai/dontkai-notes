@@ -6,9 +6,9 @@
     "type": "module",
     "scripts": {
         "dev": "vitepress dev docs",
-        "docs:build": "vitepress build docs",
-        "docs:preview": "vitepress preview docs",
-        "docs:deploy": "sh deploy.sh"
+        "build": "vitepress build docs",
+        "preview": "vitepress preview docs",
+        "deploy": "sh deploy.sh"
     },
     "dependencies": {
         "@element-plus/icons-vue": "^2.3.1",
