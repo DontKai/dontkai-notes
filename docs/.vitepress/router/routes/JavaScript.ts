@@ -1,7 +1,7 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-08-13 14:04:03
+ * @LastEditTime: 2024-08-13 14:11:57
  */
 export default [
     {
@@ -159,17 +159,128 @@ export default [
     {
         text: 'UtilsObject系列',
         collapsed: true,
-        items: []
+        items: [
+            {
+                text: '对象深拷贝',
+                link: '/page/JavaScript/utilsObject/4_ObjClone'
+            },
+            {
+                text: '字符串转对象',
+                link: '/page/JavaScript/utilsObject/4_StrParse'
+            },
+            {
+                text: '删除无效属性',
+                link: '/page/JavaScript/utilsObject/4_RemoveNullUndefined'
+            },
+            {
+                text: '获取/反转对象键值对',
+                link: '/page/JavaScript/utilsObject/4_InvertObj'
+            },
+            {
+                text: '对象是否为空',
+                link: '/page/JavaScript/utilsObject/4_IsEmptyObj'
+            },
+            {
+                text: '(上传)对象转化为FormData对象',
+                link: '/page/JavaScript/utilsObject/4_GetFormData'
+            },
+            {
+                text: '检查对象是否存在某个属性',
+                link: '/page/JavaScript/utilsObject/4_HasObjKey'
+            }
+        ]
     },
     {
         text: 'UtilsNumber系列',
         collapsed: true,
-        items: []
+        items: [
+            {
+                text: '中文金额相互转换数字',
+                link: '/page/JavaScript/utilsNumber/5_DigitUppercase'
+            },
+            {
+                text: "使用'BigInt'支持大数计算",
+                link: '/page/JavaScript/utilsNumber/5_BigInt'
+            },
+            {
+                text: '数字分隔符',
+                link: '/page/JavaScript/utilsNumber/5_ReadableBillion'
+            },
+            {
+                text: '指定位数四舍五入',
+                link: '/page/JavaScript/utilsNumber/5_RoundNumber'
+            },
+            {
+                text: '截断数字',
+                link: '/page/JavaScript/utilsNumber/5_ToFixedNumber'
+            },
+            {
+                text: '数字补零0',
+                link: '/page/JavaScript/utilsNumber/5_FillZero'
+            },
+            {
+                text: '判断为负数奇数偶数|整数相等',
+                link: '/page/JavaScript/utilsNumber/5_IsEvenMinus'
+            },
+            {
+                text: '数字取整~~代替Math.floor()',
+                link: '/page/JavaScript/utilsNumber/5_FloatNumber'
+            },
+            {
+                text: '数字千分位分隔|金额格式化',
+                link: '/page/JavaScript/utilsNumber/5_FormatMoney'
+            }
+        ]
     },
     {
         text: 'UtilsDateTime系列',
         collapsed: true,
-        items: []
+        items: [
+            {
+                text: '时间转换为刚刚几秒分时天月年',
+                link: '/page/JavaScript/utilsDateTime/6_FormatPast'
+            },
+            {
+                text: '计算距离下次生日还有多少天',
+                link: '/page/JavaScript/utilsDateTime/6_GetBirthdayFun'
+            },
+            {
+                text: '获取某年某月的第一天|最后一天',
+                link: '/page/JavaScript/utilsDateTime/6_GetMonthDay'
+            },
+            {
+                text: '获取某年某月的天数',
+                link: '/page/JavaScript/utilsDateTime/6_GetMonthDays'
+            },
+            {
+                text: '秒数转换',
+                link: '/page/JavaScript/utilsDateTime/6_FormatSeconds'
+            },
+            {
+                text: '判断日期是否为今天',
+                link: '/page/JavaScript/utilsDateTime/6_IsToday'
+            },
+            {
+                text: '查询某天是否为工作日',
+                link: '/page/JavaScript/utilsDateTime/6_IsWeekday'
+            },
+            {
+                text: '获取hh:mm:ss时间',
+                link: '/page/JavaScript/utilsDateTime/6_TimeFormat'
+            },
+            {
+                text: '查找日期位于一年中的第几天',
+                link: '/page/JavaScript/utilsDateTime/6_DayOfYear'
+            },
+            {
+                text: '检查日期是否有效',
+                link: '/page/JavaScript/utilsDateTime/6_IsDateValid'
+            },
+            {
+                text: '找出两日期之间的天数|日差',
+                link: '/page/JavaScript/utilsDateTime/6_DayDif'
+            }
+        ]
     },
     {
         text: 'UtilsOthers系列',
@@ -177,39 +288,39 @@ export default [
         items: [
             {
                 text: '字符串处理方法',
-                link: '/page/JavaScript/operatorString/'
+                link: '/page/JavaScript/7_OperatorString'
             },
             {
                 text: '浏览器操作dom操作',
-                link: '/page/JavaScript/windowOrDomOrHtmlCss/'
+                link: '/page/JavaScript/7_WindowOrDomOrHtmlCss'
             },
             {
                 text: '设备判断ios.mobble.mac.weixin',
-                link: '/page/JavaScript/deviceJudgment/'
+                link: '/page/JavaScript/7_DeviceJudgment'
             },
             {
                 text: '运算符操作',
-                link: '/page/JavaScript/operatorOperations/'
+                link: '/page/JavaScript/7_OperatorOperations'
             },
             {
                 text: '颜色RGB十六进制互转',
-                link: '/page/JavaScript/rgbOrHex/'
+                link: '/page/JavaScript/7_RgbOrHex'
             },
             {
                 text: '设置读取删除Cookie',
-                link: '/page/JavaScript/setCookie/'
+                link: '/page/JavaScript/7_SetCookie'
             },
             {
                 text: '本地会话存储类操作',
-                link: '/page/JavaScript/myCache/'
+                link: '/page/JavaScript/7_MyCache'
             },
             {
                 text: '解析URL参数',
-                link: '/page/JavaScript/searchParams/'
+                link: '/page/JavaScript/7_SearchParams'
             },
             {
                 text: '获取文件后缀名',
-                link: '/page/JavaScript/getExt/'
+                link: '/page/JavaScript/7_GetExt'
             }
         ]
     }
