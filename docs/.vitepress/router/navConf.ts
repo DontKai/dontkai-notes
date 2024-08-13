@@ -7,7 +7,7 @@ export default [
             { text: 'CSS', link: '/page/CSS/pixel/' },
             { text: 'JavaScript', link: '/page/JavaScript/es6/operrationExtension/' },
             { text: 'TypeScript', link: '/page/TypeScript/common/' },
-            { text: 'Vue', link: '/page/Vue/props/' },
+            { text: 'Vue', link: '/page/Vue/v-model/' },
             { text: '组件', link: '/page/Components/textEditor/' },
             { text: '动效', link: '/page/Animation/fragment/' },
             { text: 'Hooks', link: '/page/Hooks/useRequest/' },

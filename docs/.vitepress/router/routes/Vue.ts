@@ -1,15 +1,15 @@
 /*
  * @file: Vue 路由
  * @author: DontK
- * @LastEditTime: 2024-06-26 14:12:05
+ * @LastEditTime: 2024-08-13 14:23:19
  */
 export default [
     {
-        text: 'props',
-        link: '/page/Vue/props/'
+        text: 'v-model',
+        link: '/page/Vue/v-model/'
     },
     {
-        text: 'test',
-        link: '/page/Vue/test/'
+        text: 'props',
+        link: '/page/Vue/props/'
     }
 ]
