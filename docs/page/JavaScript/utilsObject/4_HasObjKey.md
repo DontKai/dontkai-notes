@@ -6,14 +6,14 @@
 
 ```jsx
 const Person = function (age) {
-  this.age = age;
-};
-Person.prototype.name = "fatfish";
-const p1 = new Person(24);
-console.log("name" in p1); // true  注意这里
-const person = { name: "前端小智", salary: 1000 };
-console.log("salary" in person); // true
-console.log("age" in person); // false
+    this.age = age
+}
+Person.prototype.name = 'fatfish'
+const p1 = new Person(24)
+console.log('name' in p1) // true  注意这里
+const person = { name: '前端小智', salary: 1000 }
+console.log('salary' in person) // true
+console.log('age' in person) // false
 ```
 
 ::: tip
@@ -22,22 +22,22 @@ hasOwnProperty 方法会返回一个布尔值，表示对象自身属性中是�
 
 ```jsx
 const Person = function (age) {
-  this.age = age;
-};
-Person.prototype.name = "fatfish";
+    this.age = age
+}
+Person.prototype.name = 'fatfish'
 
-const p1 = new Person(24);
-console.log(p1.hasOwnProperty("age")); // true
-console.log(p1.hasOwnProperty("name")); // fasle  注意这里
+const p1 = new Person(24)
+console.log(p1.hasOwnProperty('age')) // true
+console.log(p1.hasOwnProperty('name')) // fasle  注意这里
 ```
 
 可以使用**Object.hasOwn**来避免这两个问题，这比“obj.hasOwnProperty”方法更加方便、安全
 
 ```jsx
-let object = { age: 24 };
-Object.hasOwn(object, "age"); // true
-let object2 = Object.create({ age: 24 });
-Object.hasOwn(object2, "age"); // false
-let object3 = Object.create(null);
-Object.hasOwn(object3, "age"); // false
+let object = { age: 24 }
+Object.hasOwn(object, 'age') // true
+let object2 = Object.create({ age: 24 })
+Object.hasOwn(object2, 'age') // false
+let object3 = Object.create(null)
+Object.hasOwn(object3, 'age') // false
 ```

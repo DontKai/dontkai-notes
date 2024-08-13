@@ -1,9 +1,3 @@
-<!--
- * @file:
- * @author: DontK
- * @LastEditTime: 2024-08-13 14:09:28
--->
-
 # 获取 hh:mm:ss 时间
 
 ```js

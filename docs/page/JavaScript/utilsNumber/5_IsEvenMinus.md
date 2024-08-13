@@ -4,7 +4,7 @@
 
 ```js
 function isMinus(number) {
-  return number !== number >>> 0;
+    return number !== number >>> 0
 }
 ```
 
@@ -12,21 +12,21 @@ function isMinus(number) {
 
 ```js
 function isOdd(number) {
-  return number & (1 === 1);
+    return number & (1 === 1)
 }
 ```
 
 ## 是否是偶数
 
 ```js
-const isEven = (num) => num % 2 === 0;
-console.log(isEven(2));
+const isEven = (num) => num % 2 === 0
+console.log(isEven(2))
 ```
 
 ## 判断整数是否相等
 
 ```js
 function isEqual(number1, number2) {
-  return (number1 ^ number2) === 0;
+    return (number1 ^ number2) === 0
 }
 ```
