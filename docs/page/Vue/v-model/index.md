@@ -86,11 +86,47 @@ const inputValue2 = computed({
 </template>
 ```
 
+### 处理 v-model 修饰符
+
+```vue
+<!-- Child.vue -->
+<template>
+    <el-input v-model="inputValue1" />
+    <el-input v-model="inputValue2" />
+</template>
+<script setup lang="ts">
+const props = withDefaults(
+    defineProps<{
+        qqq: string
+        www: string
+        qqqModifiers: any;
+        wwwModifiers: any;
+    }>(),
+    {
+        qqq: '',
+        www: '',
+        qqqModifiers: () => ({}),
+        wwwModifiers: () => ({}),
+    }
+)
+console.log(props.qqqModifiers) // { capitalize: true }
+console.log(props.wwwModifiers) // { uppercase: true }
+...
+</script>
+```
+
+```vue
+<!-- Parent.vue -->
+<template>
+    <Child v-model:qqq.capitalize="xxxxx" v-model:www.uppercase="xxxxx" />
+</template>
+```
+
 ## vue 3.4 之后组件使用
 
 ### defineModel 参数详解
 
-defineModel(参数一(单个绑定可传可不传，多个绑定必须传), 参数二(选传，对象格式与 defineProps 定义参数方式相同))
+const xxx(自定义变量名) = defineModel(参数一(单个绑定可传可不传，多个绑定必须传), 参数二(选传，对象格式与 defineProps 定义参数方式相同))
 
 1. 参数一：
 
@@ -125,6 +161,7 @@ defineModel(参数一(单个绑定可传可不传，多个绑定必须传), 参�
 </template>
 <script setup lang="ts">
 const inputValue = defineModel({ required: true, type: String, default: '' })
+// const inputValue = defineModel('modelValue',{ required: true, type: String, default: '' })
 </script>
 ```
 
@@ -144,8 +181,8 @@ const inputValue = defineModel({ required: true, type: String, default: '' })
     <el-input v-model="inputValue2" />
 </template>
 <script setup lang="ts">
-const inputValue1 = defineModel({ required: true, type: String, default: '' })
-const inputValue2 = defineModel({ required: true, type: String, default: '' })
+const inputValue1 = defineModel('qqq', { required: true, type: String, default: '' })
+const inputValue2 = defineModel('www', { required: true, type: String, default: '' })
 </script>
 ```
 
@@ -153,6 +190,31 @@ const inputValue2 = defineModel({ required: true, type: String, default: '' })
 <!-- Parent.vue -->
 <template>
     <Child v-model:qqq="xxxxx" v-model:www="xxxxx" />
+</template>
+```
+
+### 处理 v-model 修饰符
+
+```vue
+<!-- Child.vue -->
+<template>
+    <el-input v-model="inputValue1" />
+    <el-input v-model="inputValue2" />
+</template>
+<script setup lang="ts">
+const [inputValue1, qqqModifiers] = defineModel('qqq')
+const [inputValue2, wwwModifiers] = defineModel('www')
+
+console.log(qqqModifiers) // { capitalize: true }
+console.log(wwwModifiers) // { uppercase: true }
+...
+</script>
+```
+
+```vue
+<!-- Parent.vue -->
+<template>
+    <Child v-model:qqq.capitalize="xxxxx" v-model:www.uppercase="xxxxx" />
 </template>
 ```
 
