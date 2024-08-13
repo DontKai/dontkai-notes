@@ -5,7 +5,7 @@ export default [
         items: [
             // { text: 'HTML', link: '/page/HTML/test/' },
             { text: 'CSS', link: '/page/CSS/pixel/' },
-            { text: 'JavaScript', link: '/page/JavaScript/prototype/' },
+            { text: 'JavaScript', link: '/page/JavaScript/es6/operrationExtension/' },
             { text: 'TypeScript', link: '/page/TypeScript/common/' },
             { text: 'Vue', link: '/page/Vue/props/' },
             { text: '组件', link: '/page/Components/textEditor/' },
