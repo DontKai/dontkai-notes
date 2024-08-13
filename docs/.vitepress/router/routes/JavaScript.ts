@@ -1,7 +1,7 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-08-13 13:48:51
+ * @LastEditTime: 2024-08-13 14:04:03
  */
 export default [
     {
@@ -137,6 +137,79 @@ export default [
             {
                 text: '数组最大值和最小值',
                 link: '/page/JavaScript/utilsArray/arrayMaxMin/'
+            },
+            {
+                text: '数组reduce方法总结',
+                link: '/page/JavaScript/utilsArray/arrayReduce'
+            },
+            {
+                text: '矩阵交换行和列',
+                link: '/page/JavaScript/utilsArray/arrayTranspose'
+            },
+            {
+                text: '遍历树节点',
+                link: '/page/JavaScript/utilsArray/arrayForeachTree'
+            },
+            {
+                text: '数组转树结构|树形结构转数组',
+                link: '/page/JavaScript/utilsArray/arrayTreeDataTranslate'
+            }
+        ]
+    },
+    {
+        text: 'UtilsObject系列',
+        collapsed: true,
+        items: []
+    },
+    {
+        text: 'UtilsNumber系列',
+        collapsed: true,
+        items: []
+    },
+    {
+        text: 'UtilsDateTime系列',
+        collapsed: true,
+        items: []
+    },
+    {
+        text: 'UtilsOthers系列',
+        collapsed: true,
+        items: [
+            {
+                text: '字符串处理方法',
+                link: '/page/JavaScript/operatorString/'
+            },
+            {
+                text: '浏览器操作dom操作',
+                link: '/page/JavaScript/windowOrDomOrHtmlCss/'
+            },
+            {
+                text: '设备判断ios.mobble.mac.weixin',
+                link: '/page/JavaScript/deviceJudgment/'
+            },
+            {
+                text: '运算符操作',
+                link: '/page/JavaScript/operatorOperations/'
+            },
+            {
+                text: '颜色RGB十六进制互转',
+                link: '/page/JavaScript/rgbOrHex/'
+            },
+            {
+                text: '设置读取删除Cookie',
+                link: '/page/JavaScript/setCookie/'
+            },
+            {
+                text: '本地会话存储类操作',
+                link: '/page/JavaScript/myCache/'
+            },
+            {
+                text: '解析URL参数',
+                link: '/page/JavaScript/searchParams/'
+            },
+            {
+                text: '获取文件后缀名',
+                link: '/page/JavaScript/getExt/'
             }
         ]
     }
