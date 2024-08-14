@@ -112,7 +112,7 @@ while (root) {
 ```
 
 <div align=center>
-    <img src=./assets/7_dom.png width=100% />
+    <img src=../assets/7_dom.png width=100% />
 </div>
 
 ## 打印 dom
@@ -373,7 +373,7 @@ htmldecode('&lt;div&gt;3&gt;5 &amp; 666&lt;/div&gt;') // <div>3>5 & 666</div>
 ## 带图带事件的桌面通知
 
 <div align=center>
-    <img src=./assets/7_notify.png  />
+    <img src=../assets/7_notify.png  />
 </div>
 
 ```js
