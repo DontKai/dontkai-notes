@@ -1,6 +1,16 @@
 # v-model 双向绑定
 
-## 原理
+## 语法糖
+
+v-model 的底层原理主要是通过属性绑定和事件监听来实现双向数据绑定，并且通过自定义组件扩展了其灵活性和适用性。
+
+```vue
+<!-- vue2.0 中 v-mode 语法糖简写的代码  -->
+<Child :value="msg" @input="msg = $event" />
+
+<!-- vue3.0 中 v-model 语法糖有所调整： -->
+<Child :modelValue="msg" @update:modelValue="msg = $event" />
+```
 
 ## vue 3.4 之前组件使用
 
@@ -223,11 +233,13 @@ console.log(wwwModifiers) // { uppercase: true }
 ```vue
 <script setup lang="ts">
 const form = defineModel('form', {
+    type: Object,
     get(val) {
         return reactive(val || {})
     }
 })
 const array = defineModel('array', {
+    type: Array,
     get(val) {
         return reactive(val || [])
     }
