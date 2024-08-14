@@ -1,9 +1,9 @@
-# is
+# 判断工具
 
 ## 代码内容
 
 ::: details 点我查看代码
-<<< @/utils/is.ts
+<<< @/utils/utils-is.ts
 :::
 
 ## 示例一: 判断两个值是否相等 isEqual
