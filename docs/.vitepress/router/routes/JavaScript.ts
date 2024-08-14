@@ -1,7 +1,7 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-08-13 14:11:57
+ * @LastEditTime: 2024-08-14 10:46:08
  */
 export default [
     {
@@ -288,39 +288,39 @@ export default [
         items: [
             {
                 text: '字符串处理方法',
-                link: '/page/JavaScript/7_OperatorString'
+                link: '/page/JavaScript/utilsOthers/7_OperatorString'
             },
             {
                 text: '浏览器操作dom操作',
-                link: '/page/JavaScript/7_WindowOrDomOrHtmlCss'
+                link: '/page/JavaScript/utilsOthers/7_WindowOrDomOrHtmlCss'
             },
             {
                 text: '设备判断ios.mobble.mac.weixin',
-                link: '/page/JavaScript/7_DeviceJudgment'
+                link: '/page/JavaScript/utilsOthers/7_DeviceJudgment'
             },
             {
                 text: '运算符操作',
-                link: '/page/JavaScript/7_OperatorOperations'
+                link: '/page/JavaScript/utilsOthers/7_OperatorOperations'
             },
             {
                 text: '颜色RGB十六进制互转',
-                link: '/page/JavaScript/7_RgbOrHex'
+                link: '/page/JavaScript/utilsOthers/7_RgbOrHex'
             },
             {
                 text: '设置读取删除Cookie',
-                link: '/page/JavaScript/7_SetCookie'
+                link: '/page/JavaScript/utilsOthers/7_SetCookie'
             },
             {
                 text: '本地会话存储类操作',
-                link: '/page/JavaScript/7_MyCache'
+                link: '/page/JavaScript/utilsOthers/7_MyCache'
             },
             {
                 text: '解析URL参数',
-                link: '/page/JavaScript/7_SearchParams'
+                link: '/page/JavaScript/utilsOthers/7_SearchParams'
             },
             {
                 text: '获取文件后缀名',
-                link: '/page/JavaScript/7_GetExt'
+                link: '/page/JavaScript/utilsOthers/7_GetExt'
             }
         ]
     }
