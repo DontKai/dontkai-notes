@@ -1,7 +1,7 @@
 /*
  * @file: Vue 路由
  * @author: DontK
- * @LastEditTime: 2024-08-13 14:23:19
+ * @LastEditTime: 2024-08-15 11:11:12
  */
 export default [
     {
@@ -11,5 +11,9 @@ export default [
     {
         text: 'props',
         link: '/page/Vue/props/'
+    },
+    {
+        text: 'emits',
+        link: '/page/Vue/emits/'
     }
 ]

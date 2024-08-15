@@ -1,8 +1,10 @@
-# props 使用
+# props
 
-## 方式一
+## 标注类型使用
 
-```ts
+```vue
+<script setup lang="ts">
+// 方式一
 const props = defineProps({
     param4: {
         type: Array,
@@ -14,13 +16,19 @@ const props = defineProps({
         default: () => ({})
     }
 })
-```
 
-## 方式二
+// 方式二
+import type { PropType } from 'vue'
 
-结合 withDefaults
+interface Param4 {
+    [key: string]: any
+}
+const props = defineProps({
+  param4: Array as PropType<any[]>
+  param5: Object as PropType<Book>
+})
 
-```ts
+// 方式三: 通过 withDefaults 编译器宏解决
 const props = withDefaults(
     defineProps<{
         param1: string
@@ -39,4 +47,5 @@ const props = withDefaults(
         param5: () => ({})
     }
 )
+</script>
 ```
