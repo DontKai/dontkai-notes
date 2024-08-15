@@ -25,5 +25,5 @@ const testClick = async () => {
 ## 代码
 
 ::: details 点我查看代码
-<<< @/hooks/useRequest.ts
+<<< @/hooks/web/useRequest.ts
 :::

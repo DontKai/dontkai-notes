@@ -7,7 +7,7 @@
 </template>
 <script setup lang="ts">
 import { ref } from 'vue'
-import useRequest from '../../../../hooks/useRequest'
+import useRequest from '../../../../hooks/web/useRequest'
 
 const testReq = () => {
     return new Promise((resolve, reject) => {

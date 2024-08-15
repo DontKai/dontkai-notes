@@ -30,7 +30,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import ScrollInfinitePlus from '../../../../components/ScrollInfinitePlus/index.vue'
-import useRequest from '../../../../hooks/useRequest'
+import useRequest from '../../../../hooks/web/useRequest'
 
 const testReq = (data: any) => {
     console.log('data: ', data)

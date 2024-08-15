@@ -1,10 +1,10 @@
 /*
  * @file: 按钮权限自定义指令
  * @author: DontK
- * @LastEditTime: 2024-07-26 17:30:05
+ * @LastEditTime: 2024-08-15 16:11:09
  */
 import type { App, Directive, DirectiveBinding } from 'vue'
-// import useStorage from '../../hooks/useStorage'
+// import useStorage from '../../hooks/web/useStorage'
 
 // const { getStorage } = useStorage()
 
