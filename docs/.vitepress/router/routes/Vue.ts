@@ -1,7 +1,7 @@
 /*
  * @file: Vue 路由
  * @author: DontK
- * @LastEditTime: 2024-08-15 16:21:05
+ * @LastEditTime: 2024-08-19 13:47:49
  */
 export default [
     {
@@ -19,5 +19,9 @@ export default [
     {
         text: 'emits',
         link: '/page/Vue/emits/'
+    },
+    {
+        text: '核心原理',
+        link: '/page/Vue/principle/'
     }
 ]
