@@ -1,13 +1,17 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-08-14 10:46:08
+ * @LastEditTime: 2024-08-20 10:41:00
  */
 export default [
     {
         text: 'ES6系列',
         collapsed: true,
         items: [
+            {
+                text: '新特性',
+                link: '/page/JavaScript/es6/newFeatures/'
+            },
             {
                 text: '运算符',
                 link: '/page/JavaScript/es6/operrationExtension/'
