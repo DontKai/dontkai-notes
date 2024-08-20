@@ -1,7 +1,7 @@
 <!--
  * @file:
  * @author: DontK
- * @LastEditTime: 2024-08-07 16:19:10
+ * @LastEditTime: 2024-08-20 14:46:08
 -->
 <template>
     <KDemoCard>
@@ -35,8 +35,8 @@
 </template>
 <script setup lang="ts">
 import { ref } from 'vue'
-import BaseFragment from '../../../../components/BaseFragment/index.vue'
-import img_1 from './999.png'
+import BaseFragment from '../../components/baseFragment.vue'
+import img_1 from '../../assets/999.png'
 
 const direction = ref<
     | 'top-bottom'
