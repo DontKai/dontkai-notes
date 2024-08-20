@@ -3,8 +3,7 @@ export default [
     {
         text: '前端',
         items: [
-            // { text: 'HTML', link: '/page/HTML/test/' },
-            { text: 'CSS', link: '/page/CSS/pixel/' },
+            { text: 'CSS_HTML', link: '/page/CSS_HTML/pixel/' },
             { text: 'JavaScript', link: '/page/JavaScript/es6/operrationExtension/' },
             { text: 'TypeScript', link: '/page/TypeScript/common/' },
             { text: 'Vue', link: '/page/Vue/v-model/' },
