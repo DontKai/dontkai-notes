@@ -1,7 +1,7 @@
 /*
  * @file: 计算相关工具
  * @author: DontK
- * @LastEditTime: 2024-08-22 15:16:28
+ * @LastEditTime: 2024-08-22 15:22:22
  */
 
 /**
@@ -84,12 +84,16 @@ export const arrayToTree = (array: any[], parentId?: any): any[] => {
 /**
  * @description: 将多层嵌套的数组扁平化为单层数组。
  * @param arr 包含元素或子数组的数组。
+ * @param depth 可指定扁平化深度。
  * @return 扁平化后的单层数组，其中包含所有嵌套元素。
  */
-export const flattenArray = (arr: any[]): any[] => {
+export const flattenArray = (arr: any[], depth: number = Infinity): any[] => {
+    if (depth === 0) {
+        return arr
+    }
     return arr.reduce((acc, item) => {
         if (Array.isArray(item)) {
-            return acc.concat(flattenArray(item))
+            return acc.concat(flattenArray(item, depth - 1))
         } else {
             return acc.concat(item)
         }
