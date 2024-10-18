@@ -20,7 +20,18 @@ interface Option {
 }
 
 const { tools, drawToolsTitle, changeDrawToolsType } = useDrawTools()
-const { drawCanvasBoxRef, drawCanvasRef, content, clearDraw, drawLine, drawSquare, drawTriangle } = useDrawCanvas()
+const {
+    drawCanvasBoxRef,
+    drawCanvasRef,
+    content,
+    clearDraw,
+    drawLine,
+    drawDashLine,
+    drawSquare,
+    drawTriangle,
+    drawBezierCurve,
+    drawArc
+} = useDrawCanvas()
 function useDrawTools() {
     const tools: Option[] = [
         {
@@ -28,12 +39,24 @@ function useDrawTools() {
             label: '画线'
         },
         {
-            value: 'square',
-            label: '画正方形'
+            value: 'dashLine',
+            label: '画虚线'
         },
         {
             value: 'triangle',
             label: '画三角形'
+        },
+        {
+            value: 'bezierCurve',
+            label: '画贝塞尔曲线'
+        },
+        {
+            value: 'square',
+            label: '画正方形'
+        },
+        {
+            value: 'arc',
+            label: '画圆弧'
         }
     ]
     const drawToolsType = ref<string>('')
@@ -49,11 +72,20 @@ function useDrawTools() {
                 case 'line':
                     drawLine()
                     break
+                case 'dashLine':
+                    drawDashLine()
+                    break
                 case 'square':
                     drawSquare()
                     break
                 case 'triangle':
                     drawTriangle()
+                    break
+                case 'bezierCurve':
+                    drawBezierCurve()
+                    break
+                case 'arc':
+                    drawArc()
                     break
                 default:
                     break
@@ -115,15 +147,16 @@ function useDrawCanvas() {
         }
     }
 
-    // 画正方形
-    const drawSquare = () => {
+    // 画虚线
+    const drawDashLine = () => {
         if (content.value) {
             content.value.beginPath()
-            content.value.moveTo(60, 60)
-            content.value.lineTo(150, 60)
-            content.value.lineTo(150, 150)
-            content.value.lineTo(60, 150)
-            content.value.lineTo(60, 60)
+            content.value.moveTo(100, 150)
+            content.value.lineTo(200, 10)
+            content.value.lineTo(275, 250)
+            content.value.lineTo(380, 150)
+            content.value.strokeStyle = 'red'
+            content.value.setLineDash([10, 5])
             content.value.stroke()
             content.value.closePath()
         }
@@ -132,11 +165,113 @@ function useDrawCanvas() {
     // 画三角形
     const drawTriangle = () => {
         if (content.value) {
+            // content.value.beginPath()
+            // content.value.moveTo(60, 60)
+            // content.value.lineTo(150, 60)
+            // content.value.lineTo(150, 150)
+            // content.value.lineTo(60, 60)
+            // 先设置样式 再绘制 再关闭路径 则会导致闭合不完全
+            // content.value.lineWidth = 5
+            // content.value.strokeStyle = 'red'
+            // content.value.stroke()
+            // content.value.closePath()
             content.value.beginPath()
             content.value.moveTo(60, 60)
             content.value.lineTo(150, 60)
             content.value.lineTo(150, 150)
             content.value.lineTo(60, 60)
+            content.value.closePath()
+            // 先关闭路径 再设置样式 再绘制 解决闭合不完全问题
+            content.value.lineWidth = 5
+            content.value.strokeStyle = 'red'
+            content.value.stroke()
+        }
+    }
+
+    // 画贝塞尔曲线
+    const drawBezierCurve = () => {
+        if (content.value) {
+            console.log('content.value: ', content.value)
+            // 三次贝塞尔曲线
+            content.value.beginPath()
+            content.value.moveTo(100, 150)
+            // content.value.quadraticCurveTo(200, 10, 380, 150) // 一个曲线，控制点(200,10) 结束点(300,100)
+            content.value.bezierCurveTo(200, 10, 275, 250, 380, 150) // 两个曲线，控制点1(200,10) 控制点2(275,250) 结束点(300,100)
+            content.value.stroke()
+            content.value.closePath()
+            // 辅助线
+            content.value.beginPath()
+            content.value.moveTo(100, 150)
+            content.value.lineTo(200, 10)
+            content.value.lineTo(275, 250)
+            content.value.lineTo(380, 150)
+            content.value.strokeStyle = 'red'
+            content.value.stroke()
+            content.value.closePath()
+        }
+    }
+
+    // 画正方形
+    const drawSquare = () => {
+        if (content.value) {
+            // 方法一: lineTo
+            content.value.beginPath()
+            // fillStyle()填充颜色一定要写在生成矩形fillRect()之前，否则颜色不生效
+            content.value.fillStyle = 'skyblue'
+            content.value.fillRect(50, 50, 100, 100) // 填充区域大小
+            content.value.moveTo(50, 50)
+            content.value.lineTo(150, 50)
+            content.value.lineTo(150, 150)
+            content.value.lineTo(50, 150)
+            content.value.lineTo(50, 50)
+            content.value.stroke()
+            content.value.closePath()
+            // 方法二: strokeRect(x,y,width,height)
+            content.value.beginPath()
+            // fillStyle()填充颜色一定要写在生成矩形fillRect()之前，否则颜色不生效
+            content.value.fillStyle = 'red'
+            content.value.fillRect(160, 50, 100, 100) // 填充区域大小
+            content.value.strokeRect(160, 50, 100, 100)
+            content.value.closePath()
+            // 方法三: stroke()和rect()
+            content.value.beginPath()
+            content.value.rect(270, 50, 100, 100)
+            content.value.fillStyle = 'blue'
+            // fill()方法和stroke()方法都是用来绘制出来形状，只不过前者是填充绘制，后者是用线轮廓。
+            content.value.fill()
+            // content.value.stroke()
+            content.value.closePath()
+        }
+    }
+
+    // 画圆弧
+    const drawArc = () => {
+        if (content.value) {
+            // 1、arc()绘制圆 arc(x, y, radius, startAngle, endAngle, anticlockwise)
+            // x,y：圆形坐标 radius：半径 startAngle：初始角度 endAngle：结束角度 anticlockwise：false顺时针或true逆时针(默认为false)
+            content.value.beginPath()
+            content.value.arc(100, 100, 50, 0, ([Math.PI / 180] as any) * 360) // (Math.PI) / 180 = 1°
+            content.value.stroke() // 如果此处改为使用fill()方法，那么将会绘制出填充的圆
+            content.value.closePath()
+            // 2、arc()绘制圆弧
+            content.value.beginPath()
+            content.value.arc(220, 100, 50, 0, ([Math.PI / 180] as any) * 90) // (Math.PI) / 180 = 1°
+            content.value.stroke()
+            content.value.closePath()
+            // 3、arcTo()绘制圆弧 arcTo(x1,y1,x2,y2,radius)
+            // x1,y1：两切线交点坐标 x2,y2：结束点坐标 radius：半径
+            content.value.beginPath()
+            content.value.moveTo(400, 100) // 定义线段的起点
+            content.value.arcTo(450, 50, 500, 200, 45) // 切线交点坐标为(350,50)，结束点为(500,200)
+            content.value.lineWidth = 1
+            content.value.stroke()
+            content.value.closePath()
+            // 辅助线
+            content.value.beginPath()
+            content.value.moveTo(400, 100)
+            content.value.lineTo(450, 50)
+            content.value.lineTo(500, 200)
+            content.value.strokeStyle = 'red'
             content.value.stroke()
             content.value.closePath()
         }
@@ -148,8 +283,11 @@ function useDrawCanvas() {
         content,
         clearDraw,
         drawLine,
+        drawDashLine,
         drawSquare,
-        drawTriangle
+        drawTriangle,
+        drawBezierCurve,
+        drawArc
     }
 }
 
