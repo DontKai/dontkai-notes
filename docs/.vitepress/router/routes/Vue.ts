@@ -1,7 +1,7 @@
 /*
  * @file: Vue 路由
  * @author: DontK
- * @LastEditTime: 2024-08-19 13:47:49
+ * @LastEditTime: 2024-10-18 15:23:02
  */
 export default [
     {
@@ -19,6 +19,10 @@ export default [
     {
         text: 'emits',
         link: '/page/Vue/emits/'
+    },
+    {
+        text: 'vnodes',
+        link: '/page/Vue/vnodes/'
     },
     {
         text: '核心原理',

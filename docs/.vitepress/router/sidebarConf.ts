@@ -1,12 +1,13 @@
 /*
  * @file: 侧边栏导航
  * @author: DontK
- * @LastEditTime: 2024-08-20 10:49:01
+ * @LastEditTime: 2024-10-18 15:33:40
  */
 import { DefaultTheme } from 'vitepress'
 import CSS_HTML from './routes/CSS_HTML'
 import JavaScript from './routes/JavaScript'
 import TypeScript from './routes/TypeScript'
+import Canvas from './routes/Canvas'
 import Vue from './routes/Vue'
 import Components from './routes/Components'
 import Animation from './routes/Animation'
@@ -21,6 +22,7 @@ const sidebarConf: DefaultTheme.Sidebar = {
     '/page/CSS_HTML/': CSS_HTML,
     '/page/JavaScript/': JavaScript,
     '/page/TypeScript/': TypeScript,
+    '/page/Canvas/': Canvas,
     '/page/Vue/': Vue,
     '/page/Components/': Components,
     '/page/Animation/': Animation,

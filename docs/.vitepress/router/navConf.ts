@@ -6,6 +6,7 @@ export default [
             { text: 'CSS_HTML', link: '/page/CSS_HTML/pixel/' },
             { text: 'JavaScript', link: '/page/JavaScript/es6/operrationExtension/' },
             { text: 'TypeScript', link: '/page/TypeScript/common/' },
+            { text: 'Canvas', link: '/page/Canvas/learn_1/' },
             { text: 'Vue', link: '/page/Vue/v-model/' },
             { text: '组件', link: '/page/Components/textEditor/' },
             { text: '动效', link: '/page/Animation/fragment/' },
