@@ -17,9 +17,9 @@ import { onMounted, ref } from 'vue'
 interface Option {
     label: string
     value: string
+    func: Function
 }
 
-const { tools, drawToolsTitle, changeDrawToolsType } = useDrawTools()
 const {
     drawCanvasBoxRef,
     drawCanvasRef,
@@ -27,36 +27,56 @@ const {
     clearDraw,
     drawLine,
     drawDashLine,
-    drawSquare,
     drawTriangle,
     drawBezierCurve,
-    drawArc
+    drawRectangle,
+    drawArc,
+    drawEllipse,
+    drawText
 } = useDrawCanvas()
+const { tools, drawToolsTitle, changeDrawToolsType } = useDrawTools()
+
 function useDrawTools() {
     const tools: Option[] = [
         {
-            value: 'line',
-            label: '画线'
+            value: 'drawLine',
+            label: '画线',
+            func: drawLine
         },
         {
-            value: 'dashLine',
-            label: '画虚线'
+            value: 'drawDashLine',
+            label: '画虚线',
+            func: drawDashLine
         },
         {
-            value: 'triangle',
-            label: '画三角形'
+            value: 'drawTriangle',
+            label: '画三角形',
+            func: drawTriangle
         },
         {
-            value: 'bezierCurve',
-            label: '画贝塞尔曲线'
+            value: 'drawBezierCurve',
+            label: '画贝塞尔曲线',
+            func: drawBezierCurve
         },
         {
-            value: 'square',
-            label: '画正方形'
+            value: 'drawRectangle',
+            label: '画矩形',
+            func: drawRectangle
         },
         {
-            value: 'arc',
-            label: '画圆弧'
+            value: 'drawArc',
+            label: '画圆弧',
+            func: drawArc
+        },
+        {
+            value: 'drawEllipse',
+            label: '画椭圆',
+            func: drawEllipse
+        },
+        {
+            value: 'drawText',
+            label: '绘制文本',
+            func: drawText
         }
     ]
     const drawToolsType = ref<string>('')
@@ -64,32 +84,11 @@ function useDrawTools() {
 
     // 改变画笔类型
     const changeDrawToolsType = (tool: Option) => {
-        if (drawToolsType.value !== tool.value) {
+        if (tool && drawToolsType.value !== tool.value) {
             drawToolsType.value = tool.value
             drawToolsTitle.value = tool.label
             clearDraw()
-            switch (tool.value) {
-                case 'line':
-                    drawLine()
-                    break
-                case 'dashLine':
-                    drawDashLine()
-                    break
-                case 'square':
-                    drawSquare()
-                    break
-                case 'triangle':
-                    drawTriangle()
-                    break
-                case 'bezierCurve':
-                    drawBezierCurve()
-                    break
-                case 'arc':
-                    drawArc()
-                    break
-                default:
-                    break
-            }
+            tool.func()
         }
     }
 
@@ -211,8 +210,8 @@ function useDrawCanvas() {
         }
     }
 
-    // 画正方形
-    const drawSquare = () => {
+    // 画矩形
+    const drawRectangle = () => {
         if (content.value) {
             // 方法一: lineTo
             content.value.beginPath()
@@ -277,6 +276,62 @@ function useDrawCanvas() {
         }
     }
 
+    // 画椭圆
+    const drawEllipse = () => {
+        if (content.value) {
+            // 用ellipse(x,y,radiusX,radiusY,rotation,startAngle,endAngle,anticlockwise)方法来绘制椭圆。
+            // x,y：圆心坐标 radiusX：x轴半径 radiusY：y轴半径 rotation：椭圆旋转角度
+            // startAngle：开始绘制点 endAngle：结束绘制点 anticlockwise：false顺时针或true逆时针(默认false)
+            content.value.beginPath()
+            // 旋转角度[(Math.PI)/180]*60	起点[(Math.PI)/180]*0   终点[(Math.PI)/180]*360
+            content.value.ellipse(
+                100,
+                100,
+                50,
+                100,
+                ([Math.PI / 180] as any) * 60,
+                ([Math.PI / 180] as any) * 0,
+                ([Math.PI / 180] as any) * 360
+            )
+            content.value.stroke()
+            content.value.closePath()
+            // 给椭圆填充色stroke()换成fill()
+            // content.value.fillStyle = 'skyblue'
+            // content.value.fill()
+        }
+    }
+
+    // 画文本
+    const drawText = () => {
+        if (content.value) {
+            // 使用strokeText(text,x,y,maxWidth)方法绘制描边文本。
+            content.value.beginPath()
+            content.value.font = '50px Verdana'
+            content.value.strokeText('Hello Canvas!', 200, 200, 400)
+            content.value.closePath()
+            content.value.beginPath()
+            // 辅助线
+            content.value.beginPath()
+            content.value.moveTo(200, 0)
+            content.value.lineTo(200, 400)
+            content.value.setLineDash([10, 5])
+            content.value.stroke()
+            content.value.closePath()
+            content.value.beginPath()
+            content.value.moveTo(0, 200)
+            content.value.lineTo(400, 200)
+            content.value.setLineDash([10, 5])
+            content.value.stroke()
+            content.value.closePath()
+            // 使用fillStroke(text,x,y,maxWidth)方法绘制填充文本。
+            content.value.beginPath()
+            content.value.font = '50px Verdana'
+            content.value.fillStyle = 'red'
+            content.value.fillText('Hello Canvas!', 200, 300, 400)
+            content.value.closePath()
+        }
+    }
+
     return {
         drawCanvasBoxRef,
         drawCanvasRef,
@@ -284,10 +339,12 @@ function useDrawCanvas() {
         clearDraw,
         drawLine,
         drawDashLine,
-        drawSquare,
+        drawRectangle,
         drawTriangle,
         drawBezierCurve,
-        drawArc
+        drawArc,
+        drawEllipse,
+        drawText
     }
 }
 
@@ -310,7 +367,7 @@ onMounted(() => {
     display: flex;
 }
 .draw-canvas-box {
-    height: 300px;
+    height: 400px;
     margin-top: 20px;
     background-color: gray;
 }
