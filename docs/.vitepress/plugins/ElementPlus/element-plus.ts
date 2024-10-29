@@ -1,4 +1,8 @@
 import {
+    ElDescriptions,
+    ElDescriptionsItem,
+    ElTag,
+    ElCard,
     ElConfigProvider,
     ElHeader,
     ElContainer,
@@ -47,6 +51,10 @@ import type { App } from 'vue'
 
 const elementPlus = {
     install(Vue: any) {
+        Vue.component('ElDescriptions', ElDescriptions)
+        Vue.component('ElDescriptionsItem', ElDescriptionsItem)
+        Vue.component('ElTag', ElTag)
+        Vue.component('ElCard', ElCard)
         Vue.component('ElConfigProvider', ElConfigProvider)
         Vue.component('ElHeader', ElHeader)
         Vue.component('ElContainer', ElContainer)

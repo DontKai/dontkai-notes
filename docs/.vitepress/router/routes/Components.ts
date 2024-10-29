@@ -1,7 +1,7 @@
 /*
  * @file: 组件 路由
  * @author: DontK
- * @LastEditTime: 2024-08-06 15:24:34
+ * @LastEditTime: 2024-10-29 13:27:11
  */
 export default [
     {
@@ -27,5 +27,9 @@ export default [
     {
         text: '拖拽移动，拖大，拖小',
         link: '/page/Components/baseDrag/'
+    },
+    {
+        text: '虚拟列表',
+        link: '/page/Components/baseVirtualList/'
     }
 ]

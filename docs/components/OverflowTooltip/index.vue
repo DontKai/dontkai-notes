@@ -1,10 +1,16 @@
 <!--
  * @file: 一行超出隐藏 显示tooltip
  * @author: DontK
- * @LastEditTime: 2024-08-07 13:18:07
+ * @LastEditTime: 2024-10-29 13:54:57
 -->
 <template>
-    <el-tooltip :effect="props.effect" :placement="props.placement" :show-after="props.showAfter" :disabled="isShow">
+    <el-tooltip
+        :effect="props.effect"
+        :placement="props.placement"
+        :show-after="props.showAfter"
+        :disabled="isShow"
+        :offset="props.offset"
+    >
         <template #content>
             <div class="overflow-tooltip-content">
                 <slot name="content">{{ props.content }}</slot>
@@ -37,13 +43,15 @@ const props = withDefaults(
             | 'right-end'
         width?: string
         showAfter?: number
+        offset?: number
     }>(),
     {
         content: '',
         effect: 'dark',
         placement: 'top',
         width: '100%',
-        showAfter: 0
+        showAfter: 0,
+        offset: 12
     }
 )
 // 使用isShow来控制tooltip是否显示
