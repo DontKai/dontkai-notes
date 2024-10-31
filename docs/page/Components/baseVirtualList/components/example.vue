@@ -1,12 +1,12 @@
 <!--
  * @file:
  * @author: DontK
- * @LastEditTime: 2024-10-29 14:27:34
+ * @LastEditTime: 2024-10-31 16:28:49
 -->
 <template>
     <KDemoCard>
         <div class="demo-container">
-            <BaseVirtualList :data="exampleList" itemContainer=".item" :item-height="94" :show-size="20">
+            <BaseVirtualList :data="exampleList" :item-height="94" :show-size="20" :show-scrollbar="true">
                 <template #default="{ data }">
                     <div class="item">
                         <div class="item__wrapper">
@@ -20,6 +20,11 @@
                     </div>
                 </template>
             </BaseVirtualList>
+            <div class="btn-container">
+                <el-button type="primary" @click="addExampleList">添加数据</el-button>
+                <br /><br />
+                <el-button type="primary" @click="changeExampleList">切换数据</el-button>
+            </div>
         </div>
     </KDemoCard>
 </template>
@@ -27,13 +32,14 @@
 import { onMounted, ref } from 'vue'
 import BaseVirtualList from '../../../../components/BaseVirtualList/index.vue'
 import OverflowTooltip from '../../../../components/OverflowTooltip/index.vue'
+import { getRandomNumber } from '../../../../utils/utils-math'
 
-const { exampleList, getExampleList } = useExample()
+const { exampleList, getExampleList, addExampleList, changeExampleList } = useExample()
 function useExample() {
     const exampleList = ref<any>([])
 
     const getExampleList = () => {
-        for (let i = 0; i < 30; i++) {
+        for (let i = 0; i < 1000; i++) {
             exampleList.value.push({
                 title: `${i}-经济运行规模的宏观经济指标，其在政治、经济、外交`,
                 content: `${i}-国内生产总值，是国际上通行的用于衡量一个国家（或地区）经济运行规模的宏观经济指标，其在政治、经济、外交、研究等领域具有广泛应用。`
@@ -41,9 +47,33 @@ function useExample() {
         }
     }
 
+    const addExampleList = () => {
+        const len = exampleList.value.length
+        for (let i = len; i < len + 30; i++) {
+            exampleList.value.push({
+                title: `${i}-经济运行规模的宏观经济指标，其在政治、经济、外交`,
+                content: `${i}-国内生产总值，是国际上通行的用于衡量一个国家（或地区）经济运行规模的宏观经济指标，其在政治、经济、外交、研究等领域具有广泛应用。`
+            })
+        }
+    }
+
+    const changeExampleList = () => {
+        const arr: any[] = []
+        const random = getRandomNumber(0, 100)
+        for (let i = random; i < random + 30; i++) {
+            arr.push({
+                title: `${i}-经济运行规模的宏观经济指标，其在政治、经济、外交`,
+                content: `${i}-国内生产总值，是国际上通行的用于衡量一个国家（或地区）经济运行规模的宏观经济指标，其在政治、经济、外交、研究等领域具有广泛应用。`
+            })
+        }
+        exampleList.value = arr
+    }
+
     return {
         exampleList,
-        getExampleList
+        getExampleList,
+        addExampleList,
+        changeExampleList
     }
 }
 
@@ -56,6 +86,7 @@ onMounted(() => {
     height: 400px;
     width: 300px;
     background-color: #a8b1ff;
+    position: relative;
     .item {
         height: 94px;
         padding-bottom: 24px;
@@ -82,6 +113,11 @@ onMounted(() => {
                 color: #718096;
             }
         }
+    }
+    .btn-container {
+        position: absolute;
+        right: -100px;
+        top: 0px;
     }
 }
 </style>
