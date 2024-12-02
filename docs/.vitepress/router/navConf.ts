@@ -12,6 +12,7 @@ export default [
             { text: '动效', link: '/page/Animation/fragment/' },
             { text: 'Hooks', link: '/page/Hooks/useRequest/' },
             { text: 'Utils', link: '/page/Utils/utils-is/' },
+            { text: 'Service', link: '/page/Service/axios/' },
             { text: '自定义指令', link: '/page/Directive/permission/' },
             { text: 'Others', link: '/page/Others/publishPrivateNpmPackage/' },
             { text: '插件', link: '/page/Plugins/element-plus/' }
