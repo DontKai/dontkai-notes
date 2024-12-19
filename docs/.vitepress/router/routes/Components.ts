@@ -31,5 +31,9 @@ export default [
     {
         text: '虚拟列表',
         link: '/page/Components/baseVirtualList/'
+    },
+    {
+        text: '折叠面板',
+        link: '/page/Components/baseCollapseCard/'
     }
 ]
