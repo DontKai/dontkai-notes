@@ -1,7 +1,7 @@
 /*
  * @file: 日期回显格式
  * @author: DontK
- * @LastEditTime: 2024-12-23 09:58:17
+ * @LastEditTime: 2024-12-23 11:27:18
  */
 // @ts-ignore
 import dayjs from 'dayjs'
@@ -65,3 +65,61 @@ export const formatTimestamp = (date: string, format = DATE_TIME_FORMAT): string
     // 否则，返回日期和时间
     return formatToDateTime(date, format)
 }
+
+/**
+ * @description: 找出两日期之间的天数|日差
+ * @param date1 日期1
+ * @param date2 日期2
+ * dayDif(new Date('2020-10-21'), new Date('2021-10-22')) => Result: 366
+ */
+export const dayDif = (date1: Date, date2: Date) => Math.ceil(Math.abs(date1.getTime() - date2.getTime()) / 86400000)
+
+/**
+ * @description: 检查日期是否有效
+ * @param val
+ */
+export const isDateValid = (val: string) => !Number.isNaN(new Date(val).valueOf())
+
+/**
+ * @description: 查找日期位于一年中的第几天
+ * @param date 日期
+ * dayOfYear(new Date()) => Result: 272
+ */
+export const dayOfYear = (date: Date) =>
+    Math.floor(((date as any) - (new Date(date.getFullYear(), 0, 0) as any)) / 1000 / 60 / 60 / 24)
+
+/**
+ * @description: 获取 hh:mm:ss 时间
+ * @param date 日期
+ * timeFormat(new Date()) => Result: 14:23:12
+ */
+export const timeFormat = (date: Date) => date.toTimeString().slice(0, 8)
+
+/**
+ * @description: 查询某天是否为工作日
+ * @param date 日期
+ * isWeekday(new Date('2024-12-23'))
+ */
+export const isWeekday = (date: Date) => date.getDay() % 6 !== 0
+
+/**
+ * @description: 判断日期是否为今天
+ * @param date 日期
+ * isToday(new Date('2024-12-23'))
+ */
+export const isToday = (date: Date) => date.toISOString().slice(0, 10) === new Date().toISOString().slice(0, 10)
+
+/**
+ * @description: 秒数转换为 hh:mm:ss 格式
+ * @param s 秒数
+ * formatSeconds(200) // 00:03:20
+ */
+export const formatSeconds = (s: number) => new Date(s * 1000).toISOString().substr(11, 8)
+
+/**
+ * @description: 获取某年月份天数
+ * @param year 年
+ * @param month 月
+ * getDaysNum(2024, 2) // 29
+ */
+export const getDaysNum = (year: number, month: number) => new Date(year, month, 0).getDate()

@@ -1,7 +1,7 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-08-20 10:41:00
+ * @LastEditTime: 2024-12-23 11:28:34
  */
 export default [
     {
@@ -233,56 +233,6 @@ export default [
             {
                 text: '数字千分位分隔|金额格式化',
                 link: '/page/JavaScript/utilsNumber/5_FormatMoney'
-            }
-        ]
-    },
-    {
-        text: 'UtilsDateTime系列',
-        collapsed: true,
-        items: [
-            {
-                text: '时间转换为刚刚几秒分时天月年',
-                link: '/page/JavaScript/utilsDateTime/6_FormatPast'
-            },
-            {
-                text: '计算距离下次生日还有多少天',
-                link: '/page/JavaScript/utilsDateTime/6_GetBirthdayFun'
-            },
-            {
-                text: '获取某年某月的第一天|最后一天',
-                link: '/page/JavaScript/utilsDateTime/6_GetMonthDay'
-            },
-            {
-                text: '获取某年某月的天数',
-                link: '/page/JavaScript/utilsDateTime/6_GetMonthDays'
-            },
-            {
-                text: '秒数转换',
-                link: '/page/JavaScript/utilsDateTime/6_FormatSeconds'
-            },
-            {
-                text: '判断日期是否为今天',
-                link: '/page/JavaScript/utilsDateTime/6_IsToday'
-            },
-            {
-                text: '查询某天是否为工作日',
-                link: '/page/JavaScript/utilsDateTime/6_IsWeekday'
-            },
-            {
-                text: '获取hh:mm:ss时间',
-                link: '/page/JavaScript/utilsDateTime/6_TimeFormat'
-            },
-            {
-                text: '查找日期位于一年中的第几天',
-                link: '/page/JavaScript/utilsDateTime/6_DayOfYear'
-            },
-            {
-                text: '检查日期是否有效',
-                link: '/page/JavaScript/utilsDateTime/6_IsDateValid'
-            },
-            {
-                text: '找出两日期之间的天数|日差',
-                link: '/page/JavaScript/utilsDateTime/6_DayDif'
             }
         ]
     },
