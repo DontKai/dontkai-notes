@@ -32,7 +32,7 @@
 import { onMounted, ref } from 'vue'
 import BaseVirtualList from '../../../../components/BaseVirtualList/index.vue'
 import OverflowTooltip from '../../../../components/OverflowTooltip/index.vue'
-import { getRandomNumber } from '../../../../utils/utils-math'
+import { getRandomNumber } from '../../../../utils/mathUtils'
 
 const { exampleList, getExampleList, addExampleList, changeExampleList } = useExample()
 function useExample() {

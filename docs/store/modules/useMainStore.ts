@@ -1,5 +1,5 @@
 // import { defineStore } from 'pinia'
-// import storageOwn from '../../utils/storageOwn'
+// import storageOwn from '../../utils/cryptoUtils/storageOwn'
 
 // interface MainState {
 //     [key: string]: any

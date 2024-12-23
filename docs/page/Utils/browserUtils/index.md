@@ -2,7 +2,9 @@
 
 ## 工具内容
 
-<<< @/utils/utils-window.ts
+::: details 点我查看代码
+<<< @/utils/browserUtils.ts
+:::
 
 ## 处理微信浏览器关闭
 

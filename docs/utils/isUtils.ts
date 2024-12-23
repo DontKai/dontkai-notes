@@ -1,7 +1,7 @@
 /*
  * @file 判断工具
  * @author: DontK
- * @LastEditTime: 2024-08-14 13:56:16
+ * @LastEditTime: 2024-12-23 09:39:44
  */
 const { toString } = Object.prototype
 

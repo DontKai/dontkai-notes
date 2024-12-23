@@ -1,13 +1,13 @@
 /*
  * @file AES对称加密/解密
  * @author: DontK
- * @LastEditTime: 2024-08-14 14:03:38
+ * @LastEditTime: 2024-12-23 09:22:51
  * npm install crypto-js --save-dev
  */
 // @ts-ignore
 // eslint-disable-next-line import/no-extraneous-dependencies
 import CryptoJS from 'crypto-js'
-import { isObject, isArray, isJSON } from './utils-is'
+import { isObject, isArray, isJSON } from '../isUtils'
 
 const KEY = 'PL+kwG0IG1w2CapFwoh0Rw=='
 const key = CryptoJS.enc.Utf8.parse(KEY)

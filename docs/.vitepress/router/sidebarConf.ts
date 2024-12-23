@@ -17,7 +17,6 @@ import Service from './routes/Service'
 import Directive from './routes/Directive'
 import Plugins from './routes/Plugins'
 import Others from './routes/Others'
-import Python from './routes/Python'
 
 const sidebarConf: DefaultTheme.Sidebar = {
     '/page/CSS_HTML/': CSS_HTML,
@@ -32,8 +31,7 @@ const sidebarConf: DefaultTheme.Sidebar = {
     '/page/Service/': Service,
     '/page/Directive/': Directive,
     '/page/Plugins/': Plugins,
-    '/page/Others/': Others,
-    '/page/Python/': Python
+    '/page/Others/': Others
 }
 
 export default sidebarConf
