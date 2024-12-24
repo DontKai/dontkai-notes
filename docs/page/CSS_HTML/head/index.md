@@ -11,7 +11,11 @@
 
 其中 `<title>` 标签和 `<meta>` 标签是必不可少的。
 
-## script 标签中 defer 和 async 有什么区别？
+## 一、title 标签
+
+`<title>` 标签定义的是整个网页的标题。它是 HTML 文档头部 (`<head>`) 中的一个必要元素，主要用于指定网页的标题。
+
+## 二、script 标签中 defer 和 async 有什么区别？
 
 defer 和 async 属性用于控制脚本的加载和执行 ，都是异步加载外部的 JS 脚本文件，两者都不会阻塞 HTML 的解析。
 
@@ -32,7 +36,110 @@ defer 和 async 属性用于控制脚本的加载和执行 ，都是异步加载
 
 3. 历史兼容性：老旧的浏览器中可能不完全支持或表现不一致。开发时需要考虑到目标用户群体可能使用的浏览器类型。
 
-## DOCTYPE 文档类型(document type)
+## 三、常用的 HTML meta 标签有哪些？
+
+> meta 是 HTML 的一个标签，用于 head 区域，主要作用是提供一些网页的属性和描述，比如网页的解析格式，网页作者信息，网页描述等等。
+> 这个标签的合理使用有利于 SEO。标签属性主要有 charset(页面编码格式)，viewport(页面适配), author(作者信息)，refersh(重定向信息)等等。
+
+`<meta>` 标签由 name 和 content 属性定义，用来描述网页文档的属性，比如网页的作者，网页描述，关键词等，除了 HTTP 标准固定了一些 name 作为大家使用的共识，还可以自定义 name。
+
+-   name 属性在 `<meta>` 标签中用来指定元数据的名称，想描述的信息类型。
+-   content 属性用来提供与 name 属性对应的实际数据或信息。值是具体的内容，可以是文本、网址或其他数据。
+
+### 常用的 meta 标签
+
+1. charset 声明文档使用的字符编码。一般是 UTF-8 编码，支持国际化字符集，是现代网页的标准字符集。
+
+```html
+<meta charset="UTF-8" />
+```
+
+2. viewport 是为了响应式设计而设置的，确保页面在不同设备上正确缩放和渲染。
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--
+content 参数有以下几种：
+width viewport：宽度(数值/device-width)；
+height viewport：高度(数值/device-height)；
+initial-scale：初始缩放比例；
+maximum-scale：最大缩放比例；
+minimum-scale：最小缩放比例；
+user-scalable：是否允许用户缩放(yes/no)
+-->
+```
+
+3. description 提供了页面的简短描述，这些描述在搜索引擎结果中可能会显示为页面的摘要。用于提高页面的 SEO 效果。
+
+```html
+<meta name="description" content="这是一个页面描述。" />
+```
+
+4. keywords 可以在 SEO 中设置以尝试优化搜索结果。
+
+```html
+<meta name="keywords" content="关键词1, 关键词2" />
+```
+
+5. author 用于指明文档的作者名字。
+
+```html
+<meta name="author" content="作者名" />
+```
+
+6. refresh 用于设置页面在一定时间后刷新或重定向到另一个 URL。content="30" 表示每 30 秒刷新页面一次。
+
+```html
+<meta http-equiv="refresh" content="30" />
+```
+
+7. robots 用于告诉搜索引擎蜘蛛不要索引这个页面，或不要跟踪页面上的链接。noindex 防止页面被索引，nofollow 防止搜索引擎跟踪链接。
+
+```html
+<meta name="robots" content="noindex, nofollow" />
+<!--
+ content 参数有以下几种：
+all：文件将被检索，且页面上的链接可以被查询；
+none：文件将不被检索，且页面上的链接不可以被查询；
+index：文件将被检索；
+follow：页面上的链接可以被查询；
+noindex：文件将不被检索；
+nofollow：页面上的链接不可以被查询。
+ -->
+```
+
+8. X-UA-Compatible 为了指定 Internet Explorer 浏览器使用最新的内核渲染当前页面，有助于解决某些兼容性问题。
+
+```html
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+```
+
+9. Open Graph 一般用于社交媒体/平台上，定义了当网页被分享时显示的标题、描述、图片和链接等信息。这些信息有助于提高链接分享的吸引力和信息的完整性。
+
+```html
+<meta property="og:title" content="标题" />
+<meta property="og:description" content="描述" />
+<meta property="og:image" content="图片URL" />
+<meta property="og:url" content="网页URL" />
+```
+
+10. Twitter Card 与 Open Graph 类似，Twitter Card 标签允许控制分享到 Twitter 时的呈现方式。用于增加推文的吸引力和点击率。
+
+```html
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@用户名" />
+<meta name="twitter:title" content="页面标题" />
+<meta name="twitter:description" content="页面描述" />
+<meta name="twitter:image" content="图片URL" />
+```
+
+11. Content-Type 用来定义 HTML 文档的内容类型和字符集，但它的使用已经比较少见，因为较新的 HTML5 规范推荐使用简单的 charset（第一个）定义。
+
+```html
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+```
+
+## 四、DOCTYPE 文档类型(document type)
 
 DOCTYPE 是 HTML5 中一种标准通用标记语言的文档类型声明，它的目的是**告诉浏览器（解析器）应该以什么样（html 或 xhtml）的文档类型定义来解析文档**，<!DOCTYPE> 不是一个 HTML 标签，它是一个指令，负责告诉浏览器页面使用哪个 HTML 版本进行编写。如果这个标记不存在，浏览器则会默认使用“怪异模式”来解析 HTML 文档。
 
@@ -52,5 +159,5 @@ DOCTYPE 是 HTML5 中一种标准通用标记语言的文档类型声明，它�
 
 正确的 DOCTYPE 声明是现代 web 开发的基础，有助于：
 
-提高页面的兼容性，确保在不同的浏览器和设备上都能如预期般正常显示。
-减少调试和维护的时间，避免了因浏览器解析差异导致的多数常见问题。
+-   提高页面的兼容性，确保在不同的浏览器和设备上都能如预期般正常显示。
+-   减少调试和维护的时间，避免了因浏览器解析差异导致的多数常见问题。

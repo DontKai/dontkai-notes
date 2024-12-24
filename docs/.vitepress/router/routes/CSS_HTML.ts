@@ -13,6 +13,10 @@ export default [
         link: '/page/CSS_HTML/head/'
     },
     {
+        text: 'HTML5 其他',
+        link: '/page/CSS_HTML/htmlCommon/'
+    },
+    {
         text: 'CSS3 新特性',
         link: '/page/CSS_HTML/newFeatures2/'
     },
