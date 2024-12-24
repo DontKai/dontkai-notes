@@ -1,10 +1,11 @@
 /*
  * @file: 侧边栏导航
  * @author: DontK
- * @LastEditTime: 2024-12-02 15:53:17
+ * @LastEditTime: 2024-12-24 14:12:28
  */
 import { DefaultTheme } from 'vitepress'
-import CSS_HTML from './routes/CSS_HTML'
+import HTML from './routes/HTML'
+import CSS from './routes/CSS'
 import JavaScript from './routes/JavaScript'
 import TypeScript from './routes/TypeScript'
 import Canvas from './routes/Canvas'
@@ -17,21 +18,24 @@ import Service from './routes/Service'
 import Directive from './routes/Directive'
 import Plugins from './routes/Plugins'
 import Others from './routes/Others'
+import Git from './routes/Git'
 
 const sidebarConf: DefaultTheme.Sidebar = {
-    '/page/CSS_HTML/': CSS_HTML,
-    '/page/JavaScript/': JavaScript,
-    '/page/TypeScript/': TypeScript,
-    '/page/Canvas/': Canvas,
-    '/page/Vue/': Vue,
-    '/page/Components/': Components,
-    '/page/Animation/': Animation,
-    '/page/Hooks/': Hooks,
-    '/page/Utils/': Utils,
-    '/page/Service/': Service,
-    '/page/Directive/': Directive,
-    '/page/Plugins/': Plugins,
-    '/page/Others/': Others
+    ...HTML,
+    ...CSS,
+    ...JavaScript,
+    ...TypeScript,
+    ...Canvas,
+    ...Vue,
+    ...Components,
+    ...Animation,
+    ...Hooks,
+    ...Utils,
+    ...Service,
+    ...Directive,
+    ...Plugins,
+    ...Others,
+    ...Git
 }
 
 export default sidebarConf

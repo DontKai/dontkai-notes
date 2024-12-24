@@ -1,15 +1,19 @@
 /*
  * @file: TypeScript 路由
  * @author: DontK
- * @LastEditTime: 2024-06-28 11:06:44
+ * @LastEditTime: 2024-12-24 13:51:22
  */
-export default [
-    {
-        text: '通用',
-        link: '/page/TypeScript/common/'
-    },
-    {
-        text: 'test',
-        link: '/page/TypeScript/test/'
-    }
-]
+export const TypeScript_Nav = { text: 'TypeScript', link: '/page/TypeScript/common/' }
+
+export default {
+    '/page/TypeScript/': [
+        {
+            text: '通用',
+            link: '/page/TypeScript/common/'
+        },
+        {
+            text: 'test',
+            link: '/page/TypeScript/test/'
+        }
+    ]
+}
