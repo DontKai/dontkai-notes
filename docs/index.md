@@ -10,7 +10,7 @@ hero:
     actions:
         - theme: brand
           text: 开始阅读 →
-          link: /page/JavaScript/prototype/
+          link: /page/HTML/newFeatures
         - theme: alt
           text: 搭建vitepress
           link: /page/VitepressBuild/
