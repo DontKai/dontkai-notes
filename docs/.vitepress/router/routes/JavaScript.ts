@@ -1,20 +1,26 @@
 /*
  * @file: JavaScript 路由
  * @author: DontK
- * @LastEditTime: 2024-12-24 13:50:01
+ * @LastEditTime: 2024-12-30 09:56:46
  */
-export const JavaScript_Nav = { text: 'JavaScript', link: '/page/JavaScript/es6/operrationExtension/' }
+export const JavaScript_Nav = { text: 'JavaScript', link: '/page/JavaScript/Interview/common1' }
 
 export default {
     '/page/JavaScript/': [
         {
-            text: 'ES6系列',
+            text: '面试系列',
             collapsed: true,
             items: [
                 {
-                    text: '新特性',
-                    link: '/page/JavaScript/es6/newFeatures/'
-                },
+                    text: '面试1',
+                    link: '/page/JavaScript/Interview/common1'
+                }
+            ]
+        },
+        {
+            text: 'ES6系列',
+            collapsed: true,
+            items: [
                 {
                     text: '运算符',
                     link: '/page/JavaScript/es6/operrationExtension/'
