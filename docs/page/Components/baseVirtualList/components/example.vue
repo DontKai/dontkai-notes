@@ -1,7 +1,7 @@
 <!--
  * @file:
  * @author: DontK
- * @LastEditTime: 2024-10-31 16:28:49
+ * @LastEditTime: 2025-01-16 14:17:43
 -->
 <template>
     <KDemoCard>
@@ -32,10 +32,18 @@
 import { onMounted, ref } from 'vue'
 import BaseVirtualList from '../../../../components/BaseVirtualList/index.vue'
 import OverflowTooltip from '../../../../components/OverflowTooltip/index.vue'
-import { getRandomNumber } from '../../../../utils/mathUtils'
 
 const { exampleList, getExampleList, addExampleList, changeExampleList } = useExample()
 function useExample() {
+    const getRandomNumber = (min: number, max: number): number => {
+        // 计算范围内的随机数
+        let random = Math.random() * (max - min + 1) + min
+        // 向下取整得到整数
+        let randomNumber = Math.floor(random)
+        // 返回随机数
+        return randomNumber
+    }
+
     const exampleList = ref<any>([])
 
     const getExampleList = () => {

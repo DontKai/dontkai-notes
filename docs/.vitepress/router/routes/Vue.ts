@@ -1,7 +1,7 @@
 /*
  * @file: Vue 路由
  * @author: DontK
- * @LastEditTime: 2024-10-18 15:23:02
+ * @LastEditTime: 2025-01-16 14:28:49
  */
 export const Vue_Nav = { text: 'Vue', link: '/page/Vue/v-model/' }
 
@@ -10,6 +10,10 @@ export default {
         {
             text: '插件',
             link: '/page/Vue/plugins/'
+        },
+        {
+            text: '自定义指令',
+            link: '/page/Vue/directive/'
         },
         {
             text: 'v-model',

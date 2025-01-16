@@ -6,10 +6,6 @@ import { Canvas_Nav } from './routes/Canvas'
 import { Vue_Nav } from './routes/Vue'
 import { Components_Nav } from './routes/Components'
 import { Animation_Nav } from './routes/Animation'
-import { Hooks_Nav } from './routes/Hooks'
-import { Utils_Nav } from './routes/Utils'
-import { Service_Nav } from './routes/Service'
-import { Directive_Nav } from './routes/Directive'
 import { Plugins_Nav } from './routes/Plugins'
 import { Others_Nav } from './routes/Others'
 import { Git_Nav } from './routes/Git'
@@ -27,10 +23,6 @@ export default [
             Vue_Nav,
             Components_Nav,
             Animation_Nav,
-            Hooks_Nav,
-            Utils_Nav,
-            Service_Nav,
-            Directive_Nav,
             Plugins_Nav,
             Others_Nav,
             Git_Nav
