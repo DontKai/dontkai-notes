@@ -1,7 +1,7 @@
 /*
  * @file: 组件 路由
  * @author: DontK
- * @LastEditTime: 2024-10-29 13:27:11
+ * @LastEditTime: 2025-01-22 18:05:47
  */
 export const Components_Nav = { text: '组件', link: '/page/Components/textEditor/' }
 
@@ -30,14 +30,6 @@ export default {
         {
             text: '拖拽移动，拖大，拖小',
             link: '/page/Components/baseDrag/'
-        },
-        {
-            text: '虚拟列表',
-            link: '/page/Components/baseVirtualList/'
-        },
-        {
-            text: '折叠面板',
-            link: '/page/Components/baseCollapseCard/'
         }
     ]
 }
